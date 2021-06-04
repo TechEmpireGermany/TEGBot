@@ -18,6 +18,7 @@ module.exports = {
                     {name: 'Suggestions:', value: "Developed by: Patriot Zest"},
                     {name: 'Custom-Commands:', value: "Developed by: Patriot Zest"},
                     {name: 'Swear-Filter:', value: "Developed by: Patriot Zest"},
+                    {name: 'Swear List:', value: "Topaz, converted and improved by BenTheTechGuy"},
                     {name: 'Music:', value: "Developed by: Philipp"},
                     {name: 'embed-messsages', value: "Developed by: Philipp"},
                     {name: 'Bot hosting:', value: "Hosted by Philipp's Pentium"},
