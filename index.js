@@ -73,14 +73,14 @@ client.on('message', async message => {
 
 
 client.on('guildMemberAdd', member => {
-	let channelID = '809372910233583626'
+	let channelID = '824060103119470622'
 	let embed = new discord.MessageEmbed()
 		.setTitle(`Member Joined`)
 		.setDescription(`${member.user.tag} has joined TechEmpireGermany!`)
 		.setThumbnail(member.user.displayAvatarURL())
 		.setColor("GREEN")
 		.setTimestamp()
-		member.guild.channels.cache.get('809372910233583626').send(embed)
+		member.guild.channels.cache.get('824060103119470622').send(embed)
 	let userembed = new discord.MessageEmbed()
 		.setTitle(`Welcome to TechEmpireGermany!`)
 		.setDescription(`Check out the rules channel and enjoy your stay! 😀`)
@@ -89,14 +89,14 @@ client.on('guildMemberAdd', member => {
 })
 
 client.on('guildMemberRemove', (member) => {
-	let channelID = '809642061610745866'
+	let channelID = '824321468279947275'
 	let embed = new discord.MessageEmbed()
 		.setTitle(`Member Left`)
 		.setDescription(`${member.user.tag} has left TechEmpireGermany`)
 		.setThumbnail(member.user.displayAvatarURL())
 		.setColor("RED")
 		.setTimestamp()
-		client.channels.cache.get('809642061610745866').send(embed)
+		client.channels.cache.get('824321468279947275').send(embed)
 })
 
 const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
