@@ -7,6 +7,10 @@ const { Player } = require('discord-player');
 
 const { swears }  = require('./swears.json');
 
+const {everyone} = require(`./Everyone.json`)
+
+const {dcinvites} = require(`./dcinvites.json`)
+
 // Mongo db hier definieren
 const mongoose = require('mongoose')
 const customschema = require('./schemas/custom-commands')
@@ -67,7 +71,67 @@ client.on('message', async message => {
 })
 
 
+//@everyone filter
+client.on('message', async message => {
+	let yes = false;
+   
+    var i;
+    for(i = 0;i < everyone.length; i++) {
+      if(message.content.toLowerCase().includes(everyone[i].toLowerCase()))
+        yes = true; 
+    }
+	if(yes){
+		message.delete()
+		let yesembed = new discord.MessageEmbed()
+			.setTitle('Everyone-Ping')
+			.setThumbnail(message.author.displayAvatarURL())
+			.addField('by', message.author.tag)
+			.addField('User ID', message.author.id)
+			.addField('Message deleted', message.content)
+			.setFooter('Time deleted', client.user.displayAvatarURL())
+			.setTimestamp()
+		let userembed = new discord.MessageEmbed()
+			.setTitle('Everyone Ping')
+			.setThumbnail(message.author.displayAvatarURL())
+			.setDescription("please don't ping @Everyone if you need help go to a support channel and ping @support-team")
+			.addField('Message deleted', message.content)
+			.setFooter('Time deleted', client.user.displayAvatarURL())
+			.setTimestamp()
+		client.channels.cache.get(`835519322909573190`).send(yesembed)
+		message.author.send(userembed)
+	}
+})
 
+//Discord.gg filter
+client.on('message', async message => {
+	let yes = false;
+   
+    var i;
+    for(i = 0;i < dcinvites.length; i++) {
+      if(message.content.toLowerCase().includes(dcinvites[i].toLowerCase()))
+        yes = true; 
+    }
+	if(yes){
+		message.delete()
+		let yesembed = new discord.MessageEmbed()
+			.setTitle('Self-promo')
+			.setThumbnail(message.author.displayAvatarURL())
+			.addField('by', message.author.tag)
+			.addField('User ID', message.author.id)
+			.addField('Message deleted', message.content)
+			.setFooter('Time deleted', client.user.displayAvatarURL())
+			.setTimestamp()
+		let userembed = new discord.MessageEmbed()
+			.setTitle('Self-Promo')
+			.setThumbnail(message.author.displayAvatarURL())
+			.setDescription("Self-Promo isn't allowed on TEG!")
+			.addField('Message deleted', message.content)
+			.setFooter('Time deleted', client.user.displayAvatarURL())
+			.setTimestamp()
+		client.channels.cache.get(`835519322909573190`).send(yesembed)
+		message.author.send(userembed)
+	}
+})
 
 
 
