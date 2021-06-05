@@ -11,6 +11,8 @@ const {everyone} = require(`./Everyone.json`)
 
 const {dcinvites} = require(`./dcinvites.json`)
 
+
+
 // Mongo db hier definieren
 const mongoose = require('mongoose')
 const customschema = require('./schemas/custom-commands')
@@ -19,7 +21,8 @@ client.config = require('./config/bot');
 client.emotes = client.config.emojis;
 client.filters = client.config.filters;
 client.commands = new discord.Collection();
-const Commando = require('discord.js-commando')
+const Commando = require('discord.js-commando');
+
 
 // Dies ist der Code für die Mongo-DB-Verbindung
 mongoose.connect('mongodb+srv://PatriotZest:techwayempire@techempiregermany.gp4jq.mongodb.net/Data',{
@@ -41,14 +44,20 @@ fs.readdirSync('./commands').forEach(dirs => {
 
 // anti swear part
 client.on('message', async message => {
-	let yes = false;
-   
-    var i;
+	let yes = false;   
+	var i;
     for(i = 0;i < swears.length; i++) {
       if(message.content.toLowerCase().includes(swears[i].toLowerCase()))
         yes = true; 
-    }
+	}
 	if(yes){
+		let roleID = "850684245927788554";
+	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+
+	let myRole = message.guild.roles.cache.get("850684245927788554");
+
+	if(message.member.roles.cache.has(myRole.id)) return
+
 		message.delete()
 		let yesembed = new discord.MessageEmbed()
 			.setTitle('Swear')
@@ -74,8 +83,7 @@ client.on('message', async message => {
 //@everyone filter
 client.on('message', async message => {
 	let yes = false;
-   
-    var i;
+	var i;
     for(i = 0;i < everyone.length; i++) {
       if(message.content.toLowerCase().includes(everyone[i].toLowerCase()))
         yes = true; 
