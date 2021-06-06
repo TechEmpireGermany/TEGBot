@@ -109,6 +109,29 @@ client.on('message', async message => {
 		message.author.send(userembed)
 	}
 })
+//auto response
+
+client.on('message', (message) => {
+	
+	if (message.content === 'can somebody help me?') {
+		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue <@824064404340473896>`);
+
+	}
+	
+	if (message.content === 'is anyone able to help me?') {
+		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue <@824064404340473896>`);
+
+	}
+	
+	if (message.content === 'can anyone help me?') {
+		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue <@824064404340473896>`);
+
+	}
+	
+	if (message.content === 'i need help') {
+message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue <@824064404340473896>`);
+
+	}})
 
 //Discord.gg filter
 client.on('message', async message => {
