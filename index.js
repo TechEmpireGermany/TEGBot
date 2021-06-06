@@ -54,9 +54,9 @@ client.on('message', async message => {
 		let roleID = "850684245927788554";
 	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
-	let myRole = message.guild.roles.cache.get("850684245927788554");
+	let bypass = message.guild.roles.cache.get("850684245927788554");
 
-	if(message.member.roles.cache.has(myRole.id)) return
+	if(message.member.roles.cache.has(bypass.id)) return
 
 		message.delete()
 		let yesembed = new discord.MessageEmbed()
@@ -123,9 +123,9 @@ client.on('message', async message => {
 		let roleID = "850684245927788554";
 	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
-	let myRole = message.guild.roles.cache.get("850684245927788554");
+	let bypass = message.guild.roles.cache.get("850684245927788554");
 
-	if(message.member.roles.cache.has(myRole.id)) return
+	if(message.member.roles.cache.has(bypass.id)) return
 
 	
 		message.delete()
