@@ -110,8 +110,36 @@ client.on('message', async message => {
 	}
 })
 //auto response
+client.on('message', (message) => {
+
+
+
+
+	if (message.author.bot) return;
+	
+	if (message.content.includes("help") ){
+
+		let roleID = "850684245927788554";
+	
+	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+
+	let bypass = message.guild.roles.cache.get("850684245927788554");
+
+	if(message.member.roles.cache.has(bypass.id)) return;
+
+		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
+
+
+	}});
 
 client.on('message', (message) => {
+	
+	
+	
+	
+	
+	
+	
 	
 	if (message.content === 'can somebody help me?') {
 		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
@@ -133,33 +161,25 @@ client.on('message', (message) => {
 
 	}
 
-	let roleID = "850684245927788554";
-	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
-	let bypass = message.guild.roles.cache.get("850684245927788554");
-
-	if(message.member.roles.cache.has(bypass.id)) return;
-
-	if (message.author.bot) return;
 
 	if (message.content.includes("issue")) {
+
+
+		let roleID = "850684245927788554";
+		let membersWithRole = message.guild.roles.cache.get(roleID).members;
+	
+		let bypass = message.guild.roles.cache.get("850684245927788554");
+	
+		if(message.member.roles.cache.has(bypass.id)) return;
+	
+		if (message.author.bot) return;
+
 		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
 
 	}
-
-	let roleID = "850684245927788554";
-	let membersWithRole = message.guild.roles.cache.get(roleID).members;
-
-	let bypass = message.guild.roles.cache.get("850684245927788554");
-
-	if(message.member.roles.cache.has(bypass.id)) return;
-
-	if (message.author.bot) return;
 	
-	if (message.content.includes("help") ){
-		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
-
-	}
+	
 	
 	if (message.content === 'i need help') {
 message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
