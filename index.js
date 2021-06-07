@@ -117,7 +117,7 @@ client.on('message', (message) => {
 
 	if (message.author.bot) return;
 	
-	if (message.content.includes("could help") ){
+	if (message.content.includes("anyone able to help") ){
 
 		let roleID = "850684245927788554";
 	
@@ -131,6 +131,52 @@ client.on('message', (message) => {
 
 
 	}});
+
+
+	client.on('message', (message) => {
+
+
+
+
+		if (message.author.bot) return;
+		
+		if (message.content.includes("someone able to help?") ){
+	
+			let roleID = "850684245927788554";
+		
+		let membersWithRole = message.guild.roles.cache.get(roleID).members;
+	
+		let bypass = message.guild.roles.cache.get("850684245927788554");
+	
+		if(message.member.roles.cache.has(bypass.id)) return;
+	
+			message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
+	
+	
+		}});
+
+
+		client.on('message', (message) => {
+
+
+
+
+			if (message.author.bot) return;
+			
+			if (message.content.includes("help me?") ){
+		
+				let roleID = "850684245927788554";
+			
+			let membersWithRole = message.guild.roles.cache.get(roleID).members;
+		
+			let bypass = message.guild.roles.cache.get("850684245927788554");
+		
+			if(message.member.roles.cache.has(bypass.id)) return;
+		
+				message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
+		
+		
+			}});
 
 client.on('message', (message) => {
 	
