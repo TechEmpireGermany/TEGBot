@@ -45,9 +45,9 @@ fs.readdirSync('./commands').forEach(dirs => {
 // anti swear part
 client.on('message', async message => {
 	let yes = false;   
-	var i;
-    for(i = 0;i < swears.length; i++) {
-      if(message.content.toLowerCase().includes(swears[i].toLowerCase()))
+	var filter1;
+    for(filter1 = 0;filter1 < swears.length; filter1++) {
+      if(message.content.toLowerCase().includes(swears[filter1].toLowerCase()))
         yes = true; 
 	}
 	if(yes){
@@ -83,9 +83,9 @@ client.on('message', async message => {
 //@everyone filter
 client.on('message', async message => {
 	let yes = false;
-	var i;
-    for(i = 0;i < everyone.length; i++) {
-      if(message.content.toLowerCase().includes(everyone[i].toLowerCase()))
+	var Filter2;
+    for(Filter2 = 0;Filter2 < everyone.length; Filter2++) {
+      if(message.content.toLowerCase().includes(everyone[Filter2].toLowerCase()))
         yes = true; 
     }
 	if(yes){
@@ -134,33 +134,6 @@ client.on('message', (message) => {
 
 client.on('message', (message) => {
 	
-	
-	
-	
-	
-	
-	
-	
-	if (message.content === 'can somebody help me?') {
-		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
-
-	}
-	
-	if (message.content === 'is anyone able to help me?') {
-		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
-
-	}
-	
-	if (message.content === 'can anyone help me?') {
-		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
-
-	}
-
-	if (message.content === 'can anyone help me') {
-		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
-
-	}
-
 
 
 	if (message.content.includes("issue")) {
@@ -176,23 +149,63 @@ client.on('message', (message) => {
 		if (message.author.bot) return;
 
 		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
+		}})
+	
+	
+	client.on('message', (message) => {
+	
 
-	}
-	
-	
-	
-	if (message.content === 'i need help') {
-message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
+if (message.content.includes("Hey")) {
 
-	}})
+
+
+	message.channel.send(`what's up?`)
+
+
+
+}
+
+
+if (message.content.includes("reinstall Windows")) {
+
+if(message.author.bot) return;
+
+	message.channel.send("This tutorial will lead you how to do a fresh windows installation:  (All your data will be gone,  back it up and use `!key` in case you need to back up your Product Key too, please save it somewhere safe and don't show us or anyone the key!)");
+       message.channel.send("https://youtu.be/bwJ_E-I9WRs");
+       message.channel.send("To figure out which key you need to use to boot to a usb, run the command `!bootkey`.");
+
+}
+
+
+
+		if (message.content.includes("virus")) {
+	
+	
+			let roleID = "850684245927788554";
+			let membersWithRole = message.guild.roles.cache.get(roleID).members;
+		
+			let bypass = message.guild.roles.cache.get("850684245927788554");
+		
+			if(message.member.roles.cache.has(bypass.id)) return;
+		
+			if (message.author.bot) return;
+	
+			message.channel.send("we suggest you to check for viruses and suspicious processes with: https://www.malwarebytes.com/mwb-download/thankyou/");
+	
+		
+		
+		
+		
+		
+		}})
 
 //Discord.gg filter
 client.on('message', async message => {
 	let yes = false;
    
-    var i;
-    for(i = 0;i < dcinvites.length; i++) {
-      if(message.content.toLowerCase().includes(dcinvites[i].toLowerCase()))
+    var filter3;
+    for(filter3 = 0;filter3 < dcinvites.length; filter3++) {
+      if(message.content.toLowerCase().includes(dcinvites[filter3].toLowerCase()))
         yes = true; 
     }
 	if(yes){
