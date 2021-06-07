@@ -1,6 +1,6 @@
 module.exports = {
     name: 'credit',
-    aliases: [],
+    aliases: [`credits`],
     category: 'Infos',
     utilisation: '{prefix}credit',
 
@@ -19,8 +19,10 @@ module.exports = {
                     {name: 'Custom-Commands:', value: "Developed by: Patriot Zest"},
                     {name: 'Swear-Filter:', value: "Developed by: Patriot Zest"},
                     {name: 'Swear List:', value: "Topaz, converted and improved by BenTheTechGuy"},
+                    {name: 'swear-filter improvements:', value: "Improved by: Philipp"},
                     {name: 'Music:', value: "Developed by: Philipp"},
                     {name: 'embed-messsages', value: "Developed by: Philipp"},
+                    {name: 'Auto-response', value: "Developed by: Philipp"},
                     {name: 'Bot hosting:', value: "Hosted by Philipp's Pentium"},
                     {name: 'Support Team Information:', value: "Developed by: BenTheTechGuy"},
                     {name: 'Support Team Custom Commands:', value: "Contributed by: Gracey"},
