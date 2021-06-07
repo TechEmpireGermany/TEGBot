@@ -117,7 +117,7 @@ client.on('message', (message) => {
 
 	if (message.author.bot) return;
 	
-	if (message.content.includes("help") ){
+	if (message.content.includes("could help") ){
 
 		let roleID = "850684245927788554";
 	
