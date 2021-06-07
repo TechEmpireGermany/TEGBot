@@ -127,6 +127,39 @@ client.on('message', (message) => {
 		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
 
 	}
+
+	if (message.content === 'can anyone help me') {
+		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
+
+	}
+
+	let roleID = "850684245927788554";
+	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+
+	let bypass = message.guild.roles.cache.get("850684245927788554");
+
+	if(message.member.roles.cache.has(bypass.id)) return;
+
+	if (message.author.bot) return;
+
+	if (message.content.includes("issue")) {
+		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
+
+	}
+
+	let roleID = "850684245927788554";
+	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+
+	let bypass = message.guild.roles.cache.get("850684245927788554");
+
+	if(message.member.roles.cache.has(bypass.id)) return;
+
+	if (message.author.bot) return;
+	
+	if (message.content.includes("help") ){
+		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
+
+	}
 	
 	if (message.content === 'i need help') {
 message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
