@@ -14,9 +14,9 @@ module.exports = {
 
 
         message.react("✅");
-        message.channel.send(`**send: your stuff application on TEG got accepted please open a ticket for more information--${custompart}**`)
+        message.channel.send(`**send: your staff application on TEG got accepted please open a ticket for more information--${custompart}**`)
 
-        user.send(`your stuff application on TEG got accepted please open a ticket for more information**--**${custompart}`)
+        user.send(`your staff application on TEG got accepted please open a ticket for more information**--**${custompart}`)
         
 
 
