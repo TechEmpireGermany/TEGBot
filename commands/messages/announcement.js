@@ -17,7 +17,7 @@ module.exports = {
         channel.send({
             embed: {
                 color: 'BLUE',
-                author: { name: `announcment` },
+                author: { name: `Announcement` },
                 fields: [
                     {name: "message", value: custompart}
                 
