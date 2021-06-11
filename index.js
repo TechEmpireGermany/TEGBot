@@ -295,6 +295,7 @@ client.on('messageDelete', async message => {
 		.setTitle(`Message deleted`)
 		.setDescription(` message deleted send by ${message.member} in ${message.channel}`)
 		.setColor("RED")
+		.addField(`${message.content}`)
 		.setTimestamp()
 	message.guild.channels.cache.get(channelID).send(logdest)
 
