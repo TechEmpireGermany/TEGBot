@@ -1,0 +1,9 @@
+module.exports = {
+    name: 'linuxusb',
+    category: 'spteam-commands',
+    utilisation: '{prefix}linuxusb',
+    execute(client, message) {
+       message.delete();
+       message.channel.send("1. Plug a USB stick (8gb or larger) into a device with access to the internet\n\n2. Download BalenaEtcher (https://www.balena.io/etcher/) or Rufus (https://rufus.ie/)\n\n3. Download a Linux ISO file (we suggest Mint: (https://linuxmint.com/download.php) Manjaro (https://manjaro.org/download/), or Pop!_OS (https://pop.system76.com/). For Pop!_OS make sure to download the edition that corresponds to your GPU, Nvidia or AMD/Intel.)\n\n4. Open BalenaEtcher/Rufus, and select the USB that you have plugged in; make sure to copy any files previously on that USB onto somewhere else because it will get wiped in the process of flashing Linux.\n\n5. Select the Linux .ISO file which you downloaded in step 3\n\n6. Press the flash button, and it will start writing Linux to the USB\n\n7. When the process has finished, pull the drive out of the system and plug it into the device you want to boot to Linux\n\n8. Boot the computer and immediately start spamming the boot menu key (figure out which one yours is with the `!bootkey` command) multiple times a second\n\n9. You will be taken to a screen asking which drive you want to boot to, select the USB\n\n10. Your computer will then boot to show the Linux desktop. Note that Linux is not installed on the computer, it's what is called a Live USB where you can test it out before you try it. Anything you do on the USB in this state will not be saved and doesn't affect your PC. If you wish to replace Windows with Linux, open the 'Install Linux' file on the desktop. If you want to return to Windows on the next reboot, simply restart the PC with the USB unplugged.")
+    }
+}
