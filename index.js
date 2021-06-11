@@ -13,7 +13,7 @@ const {dcinvites} = require(`./dcinvites.json`)
 
 
 
-// Mongo db hier definieren
+// Mongo db definiton
 const mongoose = require('mongoose')
 const customschema = require('./schemas/custom-commands')
 client.player = new Player(client);
@@ -24,7 +24,8 @@ client.commands = new discord.Collection();
 const Commando = require('discord.js-commando');
 
 
-// Dies ist der Code für die Mongo-DB-Verbindung
+
+// Mongo DB connection
 mongoose.connect('mongodb+srv://PatriotZest:techwayempire@techempiregermany.gp4jq.mongodb.net/Data',{
          useUnifiedTopology : true,
          useNewUrlParser : true,
@@ -285,8 +286,206 @@ client.on('message', async message => {
 })
 
 
+//logs
+client.on('guildMemberAdd', member => {
+	let channelID = '824319260540010557'
+	let embed = new discord.MessageEmbed()
+		.setTitle(`Member Joined`)
+		.setDescription(`${member.user.tag} has joined TechEmpireGermany!`)
+		.setThumbnail(member.user.displayAvatarURL())
+		.setColor("GREEN")
+		.setTimestamp()
+		member.guild.channels.cache.get('824319260540010557').send(embed)
+})
+
+client.on('messageDelete', async message => {
+	let channelID = '825774127661973545'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Message deleted`)
+		.setDescription(` message deleted send by ${message.member} in ${message.channel}`)
+		.setColor("RED")
+		.setTimestamp()
+	message.guild.channels.cache.get(channelID).send(logdest)
 
 
+})
+
+client.on('guildBanAdd',  async (guild,user) =>  {
+	const fetchedLogs = await guild.fetchAuditLogs({
+		limit: 1,
+		type: 'MEMBER_BAN_ADD',
+	});
+	
+	
+	const banLog = fetchedLogs.entries.first();
+	
+	
+	if (!banLog) return console.log(`${user.tag} was banned from ${guild.name} but no audit log could be found.`);
+
+	
+	
+	
+	const { executor, target } = banLog;
+	
+	if (target.id === user.id) {
+		let channelID = '825788452103913522'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Banned`)
+		.setDescription(` User banned: ${user.tag} banned by: ${executor.tag}`)
+		.setColor("RED")
+		.setTimestamp()
+	client.channels.cache.get(channelID).send(logdest)
+
+		
+		
+	} else {
+		let channelID = '825788452103913522'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Banned`)
+		.setDescription(` User banned: ${user.tag} couldn't detect who banned them`)
+		.setColor("RED")
+		.setTimestamp()
+	client.channels.cache.get(channelID).send(logdest)
+	}
+});
+
+client.on('messageUpdate', (oldMessage, newMessage) => { 
+	if (!oldMessage.author) return;
+	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
+var embed = new discord.MessageEmbed()
+.setTitle(`Message updated`) 
+.setAuthor(newMessage.author.tag)
+ .setTimestamp()
+ .setColor('BLUE')
+ .addFields(
+	 {name: 'original:',value: oldMessage},
+	 {name: 'edit:', value: newMessage}    );
+ MessageLog.send(embed);
+ 
+
+});
+client.on('guildMemberUpdate', (oldMember, newMember) => {
+	if (!oldMember.nickname && newMember.nickname) {
+	  const membernewnicklog = new discord.MessageEmbed()
+		.setAuthor(`${newMember.user.tag}`, `${newMember.user.displayAvatarURL({ format: "png", dynamic: true })}`)
+		.setDescription(`**${newMember} nickname added**`)
+		.setFooter(`${newMember.user.username}'s ID: ${newMember.id}`)
+		.setTimestamp()
+		.setColor('BLUE')
+		.addField("New nickname", newMember.nickname)
+	  client.channels.cache.get('825773983000690698').send(membernewnicklog);
+	  return;
+	}
+	if (oldMember.nickname && !newMember.nickname) {
+	  const memberremovenicklog = new discord.MessageEmbed()
+		.setAuthor(`${oldMember.user.tag}`, `${oldMember.user.displayAvatarURL({ format: "png", dynamic: true })}`)
+		.setDescription(`**${oldMember} nickname reseted**`)
+		.setFooter(`${oldMember.user.username}'s ID: ${oldMember.id}`)
+		.setTimestamp()
+		.setColor('BLUE')
+		.addField("Old nickname", oldMember.nickname)
+	  client.channels.cache.get('825773983000690698').send(memberremovenicklog);
+	  return;
+	}
+	if (oldMember.nickname && newMember.nickname) {
+	  const memberchangednicklog = new discord.MessageEmbed()
+		.setAuthor(`${newMember.user.tag}`, `${newMember.user.displayAvatarURL({ format: "png", dynamic: true })}`)
+		.setDescription(`**${newMember} nickname changed**`)
+		.setFooter(`${newMember.user.username}'s ID: ${newMember.id}`)
+		.setTimestamp()
+		.setColor('BLUE')
+		.addField("Before", oldMember.nickname)
+		.addField("After", newMember.nickname);
+	  client.channels.cache.get('825773983000690698').send(memberchangednicklog);
+	  return;
+	}
+  });
+
+  client.on("guildMemberUpdate", (oldMember, newMember) => {
+    
+    if (oldMember.roles.cache.size > newMember.roles.cache.size) {
+        
+        const Embed = new discord.MessageEmbed();
+        Embed.setColor("RED");
+        Embed.setAuthor(newMember.user.tag, newMember.user.avatarURL());
+        
+       
+        oldMember.roles.cache.forEach(role => {
+            if (!newMember.roles.cache.has(role.id)) {
+                Embed.addField("Role Removed", role);
+            }
+        });
+
+        client.channels.cache.get("825785679220703243").send(Embed);
+    } else if (oldMember.roles.cache.size < newMember.roles.cache.size) {
+        const Embed = new discord.MessageEmbed();
+        Embed.setColor("GREEN");
+        Embed.setAuthor(newMember.user.tag, newMember.user.avatarURL());
+        
+       
+        newMember.roles.cache.forEach(role => {
+            if (!oldMember.roles.cache.has(role.id)) {
+                Embed.addField("Role Added", role);
+            }
+        });
+        client.channels.cache.get("825785679220703243").send(Embed);
+    }
+});
+
+
+		
+
+
+	
+
+
+
+client.on('guildBanRemove',  async (guild,user) =>  {
+	const fetchedLogs = await guild.fetchAuditLogs({
+		limit: 1,
+		type: 'MEMBER_BAN_REMOVE',
+	});
+	
+	
+	const banLog = fetchedLogs.entries.first();
+	
+	
+	if (!banLog) return console.log(`${user.tag} was unbanned from ${guild.name} but no audit log could be found.`);
+
+	
+	
+	
+	const { executor, target } = banLog;
+	
+	if (target.id === user.id) {
+		let channelID = '825788500179812363'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Unbanned`)
+		.setDescription(` User Unbanned: ${user.tag} Unbanned by: ${executor.tag}`)
+		.setColor("RED")
+		.setTimestamp()
+	client.channels.cache.get(channelID).send(logdest)
+
+		
+		
+	} else {
+		let channelID = '825788500179812363'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Unbanned`)
+		.setDescription(` User Unbanned: ${user.tag} couldn't detect who Unbanned them`)
+		.setColor("RED")
+		.setTimestamp()
+	client.channels.cache.get(channelID).send(logdest)
+	}
+});
+
+
+
+
+
+
+
+//welcome and left notifications
 client.on('guildMemberAdd', member => {
 	let channelID = '824060103119470622'
 	let embed = new discord.MessageEmbed()
