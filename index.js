@@ -293,9 +293,8 @@ client.on('messageDelete', async message => {
 	let channelID = '825774127661973545'
 	let logdest = new discord.MessageEmbed()
 		.setTitle(`Message deleted`)
-		.setDescription(` message deleted send by ${message.member} in ${message.channel}`)
+		.setDescription(` message deleted send by ${message.member} in ${message.channel} **Content:** ${message.content}`)
 		.setColor("RED")
-		.addField(`${message.content}`)
 		.setTimestamp()
 	message.guild.channels.cache.get(channelID).send(logdest)
 
