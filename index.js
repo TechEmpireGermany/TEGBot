@@ -286,17 +286,8 @@ client.on('message', async message => {
 })
 
 
-//logs
-client.on('guildMemberAdd', member => {
-	let channelID = '824319260540010557'
-	let embed = new discord.MessageEmbed()
-		.setTitle(`Member Joined`)
-		.setDescription(`${member.user.tag} has joined TechEmpireGermany!`)
-		.setThumbnail(member.user.displayAvatarURL())
-		.setColor("GREEN")
-		.setTimestamp()
-		member.guild.channels.cache.get('824319260540010557').send(embed)
-})
+
+
 
 client.on('messageDelete', async message => {
 	let channelID = '825774127661973545'
@@ -500,7 +491,16 @@ client.on('guildMemberAdd', member => {
 		.setDescription(`Check out the rules channel and enjoy your stay! 😀`)
 		.setColor("ORANGE")
 		member.send(userembed);
+		let channelID2 = '824319260540010557'
+	let embed2 = new discord.MessageEmbed()
+		.setTitle(`Member Joined`)
+		.setDescription(`${member.user.tag} has joined TechEmpireGermany!`)
+		.setThumbnail(member.user.displayAvatarURL())
+		.setColor("GREEN")
+		.setTimestamp()
+		member.guild.channels.cache.get('824319260540010557').send(embed2)
 })
+
 
 client.on('guildMemberRemove', (member) => {
 	let channelID = '824321468279947275'
