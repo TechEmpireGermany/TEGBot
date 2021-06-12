@@ -4,9 +4,9 @@ module.exports = {
     category: 'messages',
     utilisation: '{prefix}announcements',
 
-    async execute(client, message, args,roles) {
+    async execute(client, message,args) {
 
-        const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
+        const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[1])
         if(!channel) return message.channel.send('Channel not found.')
         const custompart = args.slice(1).join(" ")
 
