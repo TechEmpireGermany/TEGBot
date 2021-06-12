@@ -6,7 +6,7 @@ module.exports = {
 
     async execute(client, message,args) {
 
-        const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[1])
+        const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
         if(!channel) return message.channel.send('Channel not found.')
         const custompart = args.slice(1).join(" ")
 
