@@ -26,6 +26,7 @@ module.exports = {
                     {name: 'Bot hosting:', value: "Hosted by Philipp's Pentium"},
                     {name: 'Support Team Information:', value: "Developed by: BenTheTechGuy"},
                     {name: 'Support Team Custom Commands:', value: "Contributed by: Gracey"},
+                    {name: 'Website:', value: "Created and Designed by: BenTheTechGuy"},
                     {name: 'Project Organizer:', value: "BenTheTechGuy"}
                 ]
             },
