@@ -495,7 +495,6 @@ client.on('guildMemberAdd', member => {
 	let embed2 = new discord.MessageEmbed()
 		.setTitle(`Member Joined`)
 		.setDescription(`${member.user.tag} has joined TechEmpireGermany!`)
-		.setThumbnail(member.user.displayAvatarURL())
 		.setColor("GREEN")
 		.setTimestamp()
 		member.guild.channels.cache.get('824319260540010557').send(embed2)
