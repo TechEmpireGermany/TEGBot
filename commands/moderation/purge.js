@@ -5,14 +5,13 @@ module.exports = {
 
     async execute(client, message, args) {
         const amount = args.join(" ");
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have `MANAGE_MESSAGES` permission")
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have permission to delete messages")
         if(!amount) return message.reply('Please provide an amount of messages for me to delete')
-        if(amount > 100) return message.reply(`You cannot delete more than 100 messages at once`)
-        if(amount < 1) return message.reply(`You need to delete at least one message`)
-        if(isNaN(amount)) return message.reply("pls give me a number")
+        if(amount > 100) return message.reply('You cannot delete more than 100 messages at once')
+        if(amount < 1) return message.reply('You need to delete at least one message')
+        if(isNaN(amount)) return message.reply("That's not a number")
         await message.channel.messages.fetch({limit: amount}).then(messages => {
             message.channel.bulkDelete(messages)
-	  message.react("✅")
     });
     let embed = new Discord.MessageEmbed()
 	.setTitle("Messages Deleted")
