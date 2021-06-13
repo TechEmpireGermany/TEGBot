@@ -348,9 +348,8 @@ var embed = new discord.MessageEmbed()
 .setAuthor(newMessage.author.tag)
  .setTimestamp()
  .setColor('BLUE')
- .addFields(
-	 {name: 'original:',value: oldMessage},
-	 {name: 'edit:', value: newMessage}    );
+ .addField(`original:  ${oldMessage}`)
+ .addField(`edit:  		${newMessage}`)
  MessageLog.send(embed);
  
 
