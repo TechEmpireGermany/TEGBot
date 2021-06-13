@@ -23,7 +23,7 @@ module.exports = {
 
             console.log(`${new Date }------skipped:------${message.member}`);
 
-            delay(1500);
+            
 
         client.player.skip(message);
 
