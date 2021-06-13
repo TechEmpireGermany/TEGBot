@@ -343,13 +343,13 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 client.on('messageUpdate', (oldMessage, newMessage) => { 
 	if (!oldMessage.author) return;
 	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
-var embed = new discord.MessageEmbed()
+const embed = new discord.MessageEmbed()
 .setTitle(`Message updated`) 
 .setAuthor(newMessage.author.tag)
+.addField("Original:", oldMessage)
+ .addField("Edit:", newMessage)
  .setTimestamp()
  .setColor('BLUE')
- .addField(`original:  ${oldMessage}`)
- .addField(`edit:  		${newMessage}`)
  MessageLog.send(embed);
  
 
