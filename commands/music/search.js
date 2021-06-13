@@ -11,7 +11,7 @@ module.exports = {
 
         if (!args[0]) return message.channel.send(`${client.emotes.error} - Please indicate the title of a song !`);
 
-        delay(1500);
+        
 
         client.player.play(message, args.join(" "));
 
