@@ -10,7 +10,7 @@ module.exports = {
         const user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         if(!user) return message.channel.send('User not found.')
         const reason = args.slice(1).join(" ")
-        if(!reason)return message.channel.send("Please define a warn reason so  i don´t crash");
+        if(!reason) return message.channel.send("Please define a warn reason so  i don´t crash");
         db.findOne({ guildid: message.guild.id, user: user.user.id}, async(err, data) => {
             if(err) throw err;
             if(!data) {
