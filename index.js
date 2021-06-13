@@ -396,30 +396,40 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
     
     if (oldMember.roles.cache.size > newMember.roles.cache.size) {
         
-        const Embed = new discord.MessageEmbed();
-        Embed.setColor("RED");
-        Embed.setAuthor(newMember.user.tag, newMember.user.avatarURL());
+       
         
        
         oldMember.roles.cache.forEach(role => {
             if (!newMember.roles.cache.has(role.id)) {
-                Embed.addField("Role Removed", role);
-            }
+				const Embedroles1 = new discord.MessageEmbed();
+				Embedroles1.setColor("RED");
+				Embedroles1.setAuthor(newMember.user.tag, newMember.user.avatarURL());
+                Embedroles1.addField("Role Removed", role);
+           
+				client.channels.cache.get("825785679220703243").send(Embedroles1)
+			
+			}
+
+			;
         });
 
-        client.channels.cache.get("825785679220703243").send(Embed);
+       
     } else if (oldMember.roles.cache.size < newMember.roles.cache.size) {
-        const Embed = new discord.MessageEmbed();
-        Embed.setColor("GREEN");
-        Embed.setAuthor(newMember.user.tag, newMember.user.avatarURL());
+        
         
        
         newMember.roles.cache.forEach(role => {
             if (!oldMember.roles.cache.has(role.id)) {
-                Embed.addField("Role Added", role);
-            }
+				const Embedroles2 = new discord.MessageEmbed();
+        Embedroles2.setColor("GREEN");
+        Embedroles2.setAuthor(newMember.user.tag, newMember.user.avatarURL());
+                Embedroles2.addField("Role Added", role);
+           
+				client.channels.cache.get("825785679220703243").send(Embedroles2);
+			
+			}
         });
-        client.channels.cache.get("825785679220703243").send(Embed);
+        
     }
 });
 
