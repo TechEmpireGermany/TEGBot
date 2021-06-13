@@ -1,6 +1,6 @@
-*(For Patriotzest) Making a remove roles and create role function both should log in the channels for that log purpose
+* (For Patriotzest) Making a remove roles and create role function both should log in the channels for that log purpose
 
-*(For Patriotzest) Making a delete and create Channel command it should log the actions in the channels made for that logging purpose 
+* (For Patriotzest) Making a delete and create Channel command it should log the actions in the channels made for that logging purpose 
 
 * Add what the trigger word was to the DM and log messages of the swear filter
 
