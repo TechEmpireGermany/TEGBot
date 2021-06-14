@@ -347,13 +347,14 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 });
 
 client.on('messageUpdate', (oldMessage, newMessage) => { 
+	if (newMessage ===  oldMessage ) return;
 	if (!oldMessage.author) return;
 	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
 const embed = new discord.MessageEmbed()
 .setTitle(`Message updated`) 
 .setAuthor(newMessage.author.tag)
-.addField("Original:", oldMessage)
- .addField("Edit:", newMessage)
+.addField(`Original:`, oldMessage)
+ .addField(`Edit:`, newMessage)
  .setTimestamp()
  .setColor('BLUE')
  MessageLog.send(embed);
@@ -361,38 +362,42 @@ const embed = new discord.MessageEmbed()
 
 });
 client.on('guildMemberUpdate', (oldMember, newMember) => {
+	
 	if (!oldMember.nickname && newMember.nickname) {
+		if (newMember.nickname === oldMember.nickname) return;
 	  const membernewnicklog = new discord.MessageEmbed()
 		.setAuthor(`${newMember.user.tag}`, `${newMember.user.displayAvatarURL({ format: "png", dynamic: true })}`)
 		.setDescription(`**${newMember} nickname added**`)
 		.setFooter(`${newMember.user.username}'s ID: ${newMember.id}`)
 		.setTimestamp()
 		.setColor('BLUE')
-		.addField("New nickname", newMember.nickname)
-	  client.channels.cache.get('825773983000690698').send(membernewnicklog);
+		.addField(`New nickname`, newMember.nickname)
+	  client.channels.cache.get('825774068313358346').send(membernewnicklog);
 	  return;
 	}
 	if (oldMember.nickname && !newMember.nickname) {
+		if (newMember.nickname === oldMember.nickname) return;
 	  const memberremovenicklog = new discord.MessageEmbed()
 		.setAuthor(`${oldMember.user.tag}`, `${oldMember.user.displayAvatarURL({ format: "png", dynamic: true })}`)
 		.setDescription(`**${oldMember} nickname reseted**`)
 		.setFooter(`${oldMember.user.username}'s ID: ${oldMember.id}`)
 		.setTimestamp()
 		.setColor('BLUE')
-		.addField("Old nickname", oldMember.nickname)
-	  client.channels.cache.get('825773983000690698').send(memberremovenicklog);
+		.addField(`Old nickname`, oldMember.nickname)
+	  client.channels.cache.get('825774068313358346').send(memberremovenicklog);
 	  return;
 	}
 	if (oldMember.nickname && newMember.nickname) {
+		if (newMember.nickname === oldMember.nickname) return;
 	  const memberchangednicklog = new discord.MessageEmbed()
 		.setAuthor(`${newMember.user.tag}`, `${newMember.user.displayAvatarURL({ format: "png", dynamic: true })}`)
 		.setDescription(`**${newMember} nickname changed**`)
 		.setFooter(`${newMember.user.username}'s ID: ${newMember.id}`)
 		.setTimestamp()
 		.setColor('BLUE')
-		.addField("Before", oldMember.nickname)
-		.addField("After", newMember.nickname);
-	  client.channels.cache.get('825773983000690698').send(memberchangednicklog);
+		.addField(`Before`, oldMember.nickname)
+		.addField(`After`, newMember.nickname);
+	  client.channels.cache.get('825774068313358346').send(memberchangednicklog);
 	  return;
 	}
   });
@@ -407,9 +412,9 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
         oldMember.roles.cache.forEach(role => {
             if (!newMember.roles.cache.has(role.id)) {
 				const Embedroles1 = new discord.MessageEmbed();
-				Embedroles1.setColor("RED");
+				Embedroles1.setColor(`RED`);
 				Embedroles1.setAuthor(newMember.user.tag, newMember.user.avatarURL());
-                Embedroles1.addField("Role Removed", role);
+                Embedroles1.addField(`Role Removed`, role);
            
 				client.channels.cache.get("825785679220703243").send(Embedroles1)
 			
@@ -426,9 +431,9 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
         newMember.roles.cache.forEach(role => {
             if (!oldMember.roles.cache.has(role.id)) {
 				const Embedroles2 = new discord.MessageEmbed();
-        Embedroles2.setColor("GREEN");
+        Embedroles2.setColor(`GREEN`);
         Embedroles2.setAuthor(newMember.user.tag, newMember.user.avatarURL());
-                Embedroles2.addField("Role Added", role);
+                Embedroles2.addField(`Role Added`, role);
            
 				client.channels.cache.get("825785679220703243").send(Embedroles2);
 			
