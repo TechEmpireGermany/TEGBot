@@ -318,7 +318,8 @@ client.on('message', async (message) => {
 	if (dmmessage)  {
 if (message.author.bot) return;
 
-		let channelID = '853984661360869386'
+
+		let channelID = `853984661360869386`
 		let logdest = new discord.MessageEmbed()
 			.setTitle(`DM`)
 			.setDescription(`by:  ${message.author}`  )
@@ -390,24 +391,10 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 
 
 
-client.on('messageUpdate', async (newMessage,message) => { 
-	if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
-	
-	
-	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
-const embed = new discord.MessageEmbed()
-.setTitle(`Message updated`) 
-.setAuthor(newMessage.author.tag)
- .addField(`Edit:`, newMessage)
- .setTimestamp()
- .setColor('BLUE')
- MessageLog.send(embed);
- 
 
-});
 
-client.on('messageUpdate', async (oldMessage,message) => { 
-	if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+client.on('messageUpdate', async (oldMessage,newMessage) => { 
+	
 	
 	
 	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
@@ -415,6 +402,7 @@ const embed = new discord.MessageEmbed()
 .setTitle(`Message updated`) 
 .setAuthor(oldMessage.author.tag)
  .addField(`Original:`, oldMessage)
+ .addField(`Edit:` , newMessage)
  .setTimestamp()
  .setColor('BLUE')
  MessageLog.send(embed);
