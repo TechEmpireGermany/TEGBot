@@ -90,6 +90,12 @@ client.on('message', async message => {
         yes = true; 
     }
 	if(yes){
+		let roleID = "824063311829925898";
+	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+
+	let bypass = message.guild.roles.cache.get("824063311829925898");
+
+	if(message.member.roles.cache.has(bypass.id)) return
 		message.delete()
 		let yesembed = new discord.MessageEmbed()
 			.setTitle('Everyone-Ping')
