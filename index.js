@@ -43,6 +43,13 @@ fs.readdirSync('./commands').forEach(dirs => {
 });
 
 
+client.on(`message` , async (message) => { 
+
+	if (message.channel.type === `dm`) return
+	if(message.author.bot) return
+
+})
+
 // anti swear part
 client.on('message', async message => {
 	let yes = false;   
@@ -311,7 +318,7 @@ client.on('message', async (message) => {
 	if (dmmessage)  {
 if (message.author.bot) return;
 
-		let channelID = '853984661360869386'
+		let channelID = '788344664905482260'
 		let logdest = new discord.MessageEmbed()
 			.setTitle(`DM`)
 			.setDescription(`by:  ${message.author}`  )
@@ -381,11 +388,13 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 	}
 });
 
-client.on('messageUpdate', (message,newMessage,oldMessage) => { 
-	if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+
+
+client.on('messageUpdate', async (oldMessage,newMessage) => { 
 	if (newMessage ===  oldMessage ) return;
 	if (!oldMessage.author) return;
-	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
+	
+	const MessageLog = client.channels.cache.find(channel => channel.id ==='788344664905482260');
 const embed = new discord.MessageEmbed()
 .setTitle(`Message updated`) 
 .setAuthor(newMessage.author.tag)
