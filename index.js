@@ -303,6 +303,27 @@ client.on('message', async message => {
 	}
 })
 
+//DM log
+client.on('message', async (message) => {
+
+	const dmmessage = message.channel.type === `dm`
+
+	if (dmmessage)  {
+
+		let channelID = '853984661360869386'
+		let logdest = new discord.MessageEmbed()
+			.setTitle(`DM`)
+			.setDescription(`by:  ${message.author}`  )
+			.addField(` **Content:**`, message.content)
+			.addField(`User ID:`, message.author.id)
+			.setColor("RED")
+			.setTimestamp()
+			client.channels.cache.get(channelID).send(logdest)
+
+	}})
+
+
+
 
 
 
