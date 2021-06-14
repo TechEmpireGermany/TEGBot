@@ -318,7 +318,7 @@ client.on('message', async (message) => {
 	if (dmmessage)  {
 if (message.author.bot) return;
 
-		let channelID = '788344664905482260'
+		let channelID = '853984661360869386'
 		let logdest = new discord.MessageEmbed()
 			.setTitle(`DM`)
 			.setDescription(`by:  ${message.author}`  )
@@ -394,7 +394,7 @@ client.on('messageUpdate', async (oldMessage,newMessage) => {
 	if (newMessage ===  oldMessage ) return;
 	if (!oldMessage.author) return;
 	
-	const MessageLog = client.channels.cache.find(channel => channel.id ==='788344664905482260');
+	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
 const embed = new discord.MessageEmbed()
 .setTitle(`Message updated`) 
 .setAuthor(newMessage.author.tag)
