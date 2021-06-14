@@ -52,6 +52,7 @@ client.on('message', async message => {
         yes = true; 
 	}
 	if(yes){
+		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 		let roleID = "850684245927788554";
 	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
@@ -90,6 +91,7 @@ client.on('message', async message => {
         yes = true; 
     }
 	if(yes){
+		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 		let roleID = "824063311829925898";
 	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
@@ -262,6 +264,7 @@ client.on('message', async message => {
         yes = true; 
     }
 	if(yes){
+		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 		let roleID = "850684245927788554";
 	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
