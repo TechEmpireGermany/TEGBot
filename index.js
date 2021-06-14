@@ -127,6 +127,7 @@ client.on('message', (message) => {
 	if (message.author.bot) return;
 	
 	if (message.content.includes("anyone able to help") ){
+		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 
 		let roleID = "850684245927788554";
 	
@@ -150,6 +151,7 @@ client.on('message', (message) => {
 		if (message.author.bot) return;
 		
 		if (message.content.includes("someone able to help?") ){
+			if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 	
 			let roleID = "850684245927788554";
 		
@@ -173,6 +175,7 @@ client.on('message', (message) => {
 			if (message.author.bot) return;
 			
 			if (message.content.includes("help me?") ){
+				if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 		
 				let roleID = "850684245927788554";
 			
@@ -192,6 +195,8 @@ client.on('message', (message) => {
 
 
 	if (message.content.includes("issue")) {
+
+		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 
 
 		let roleID = "850684245927788554";
@@ -223,6 +228,8 @@ if (message.content.includes("Hey")) {
 
 if (message.content.includes("reinstall Windows")) {
 
+	if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+
 if(message.author.bot) return;
 
 	message.channel.send("This tutorial will lead you how to do a fresh windows installation:  (All your data will be gone,  back it up and use `!key` in case you need to back up your Product Key too, please save it somewhere safe and don't show us or anyone the key!)");
@@ -234,6 +241,8 @@ if(message.author.bot) return;
 
 
 		if (message.content.includes("virus")) {
+
+			if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 	
 	
 			let roleID = "850684245927788554";
@@ -299,6 +308,7 @@ client.on('message', async message => {
 
 
 client.on('messageDelete', async message => {
+	if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 	let channelID = '825774127661973545'
 	let logdest = new discord.MessageEmbed()
 		.setTitle(`Message deleted`)
@@ -349,7 +359,8 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 	}
 });
 
-client.on('messageUpdate', (oldMessage, newMessage) => { 
+client.on('messageUpdate', (message,oldMessage, newMessage) => { 
+	if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 	if (newMessage ===  oldMessage ) return;
 	if (!oldMessage.author) return;
 	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
