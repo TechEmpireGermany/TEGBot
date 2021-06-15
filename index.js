@@ -393,9 +393,9 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 
 
 
-client.on('messageUpdate', async (oldMessage,newMessage) => { 
+client.on('messageUpdate', async (newMessage,oldMessage) => { 
 	if(oldMessage.channel.type === `dm`) return newMessage.channel.send("**Hello this is a automatically send message, as a reply to a DM if you want to tell us something please do it on the Server thank you**")
-	
+	if(oldMessage.author.bot) return;
 	
 	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
 const embed = new discord.MessageEmbed()
@@ -541,11 +541,10 @@ client.on('guildBanRemove',  async (guild,user) =>  {
 
 
 
-
-
-
 //welcome and left notifications
-client.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', (member) => {
+	
+
 	let channelID = '824060103119470622'
 	let embed = new discord.MessageEmbed()
 		.setTitle(`Member Joined`)
