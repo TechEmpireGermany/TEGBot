@@ -399,6 +399,7 @@ client.on('messageUpdate', async (oldMessage,newMessage) => {
 	
 	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
 const embed = new discord.MessageEmbed()
+if(!oldMessage.author.tag)  oldMessage.author.tag = `couldn't identify`
 .setTitle(`Message updated`) 
 .setAuthor(oldMessage.author.tag)
  .addField(`Original:`, oldMessage)
