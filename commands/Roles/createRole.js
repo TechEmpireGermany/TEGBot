@@ -5,7 +5,8 @@ module.exports = {
 	description: "Creates a role dude",
 	aliases: ['cr', 'createrole', 'createRole'],
 	async execute (client, message, args){
-        let namer = args[0]
+    message.react("✅");  
+    let namer = args[0]
         let hexcolour = args[1]
         let perm = args[2]
         if(!message.member.hasPermission("ADMINSTRATOR")) return message.reply("Err no")

@@ -7,6 +7,8 @@ module.exports = {
 	async execute (client, message, args){
 	let roleName = args[0]
 	let roleYes = message.mentions.roles.first()
+	if(!message.member.hasPermission("ADMINSTRATOR")) return message.reply("Err no")
+	if(!message.guild.me.hasPermission("ADMINSTRATOR")) return message.channel.send("Id have any perms :(")
 	if(roleYes){
 	roleName = roleYes.name
 	let TheRoleFound = message.guild.roles.cache.find(role => role.name === roleName)
