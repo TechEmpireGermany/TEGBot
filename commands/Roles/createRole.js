@@ -43,6 +43,7 @@ module.exports = {
               name: namer,
               color: hexcolour,
               permissions: perm,
+              mentionable: true,
             },
             reason: `Role created by ${message.author.tag}`,
           })

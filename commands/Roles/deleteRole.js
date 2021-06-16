@@ -5,7 +5,8 @@ module.exports = {
 	description: "Deletes a role",
 	aliases: ['dr', 'deleterole', 'deleteRole'],
 	async execute (client, message, args){
-	let roleName = args[0]
+		message.react("✅");
+		let roleName = args[0]
 	let roleYes = message.mentions.roles.first()
 	if(!message.member.hasPermission("ADMINSTRATOR")) return message.reply("Err no")
 	if(!message.guild.me.hasPermission("ADMINSTRATOR")) return message.channel.send("Id have any perms :(")
