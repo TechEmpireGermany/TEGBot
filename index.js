@@ -393,7 +393,7 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 
 
 
-client.on('messageUpdate', async (newMessage,oldMessage) => { 
+client.on('messageUpdate', async (oldMessage,newMessage) => { 
 	if(oldMessage.channel.type === `dm`) return newMessage.channel.send("**Hello this is a automatically send message, as a reply to a DM if you want to tell us something please do it on the Server thank you**")
 	if(oldMessage.author.bot) return;
 	
