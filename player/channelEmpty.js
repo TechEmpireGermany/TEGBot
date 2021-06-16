@@ -7,7 +7,8 @@ module.exports = (client, message, ) => {
             author: { name: "Disconnected from VC" },
             footer: { text: 'ready as always!' },
             fields: [
-                {name: "ping", value: client.ws.ping}
+                {name: "ping", value: client.ws.ping},
+                {name: `reason` , value: "channel is empty!"}
             ],
             timestamp: new Date(),
         },

@@ -8,6 +8,9 @@ module.exports = {
         if (!args[0]) {
             const infos = message.client.commands.filter(x => x.category == 'Infos').map((x) => '`' + x.name + '`').join(', ');
             const music = message.client.commands.filter(x => x.category == 'Music').map((x) => '`' + x.name + '`').join(', ');
+            const staff_re = message.client.commands.filter(x => x.category == 'staff-re').map((x) => '`' + x.name + '`').join(', ');
+            const messages = message.client.commands.filter(x => x.category == 'messages').map((x) => '`' + x.name + '`').join(', ');
+            const spteam_commands = message.client.commands.filter(x => x.category == 'spteam-commands').map((x) => '`' + x.name + '`').join(', ');
 
             message.channel.send({
                 embed: {
@@ -15,9 +18,12 @@ module.exports = {
                     author: { name: 'Help pannel' },
                     footer: { text: 'ready as always' },
                     fields: [
-                        { name: 'Bot', value: infos },
+                        { name: 'Infos', value: infos },
                         { name: 'Music', value: music },
-                        { name: 'Filters', value: client.filters.map((x) => '`' + x + '`').join(', ') },
+                        {name: 'Staff-re', value:staff_re },
+                        {name: 'Support Team Commands', value:spteam_commands },
+                        {name: 'messages', value:messages },
+                        { name: 'Music Filters', value: client.filters.map((x) => '`' + x + '`').join(', ') },
                     ],
                     timestamp: new Date(),
                     description: `To use filters, ${client.config.discord.prefix}filter (the filter). Example : ${client.config.discord.prefix}filter 8D.`,
@@ -36,7 +42,7 @@ module.exports = {
                     fields: [
                         { name: 'Name', value: command.name, inline: true },
                         { name: 'Category', value: command.category, inline: true },
-                        { name: 'Aliase(s)', value: command.aliases.length < 1 ? 'None' : command.aliases.join(', '), inline: true },
+                        { name: 'Alias(es)', value: command.aliases.length < 1 ? 'None' : command.aliases.join(', '), inline: true },
                         { name: 'Utilisation', value: command.utilisation.replace('{prefix}', client.config.discord.prefix), inline: true },
                     ],
                     timestamp: new Date(),

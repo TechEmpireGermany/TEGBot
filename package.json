@@ -163,4 +163,8 @@
   "scripts": {
     "start": "node index.js"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5a5827c5d164b553e899162de23e22b60ff44640

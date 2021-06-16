@@ -23,6 +23,8 @@ module.exports = {
 
         client.player.setVolume(message, parseInt(args[0]));
 
+        message.delete();
+
         message.channel.send({
             embed: {
                 color: 'GREEN',

@@ -7,7 +7,17 @@ const { Player } = require('discord-player');
 
 const { swears }  = require('./swears.json');
 
+<<<<<<< HEAD
 // Mongo db hier definieren
+=======
+const {everyone} = require(`./Everyone.json`)
+
+const {dcinvites} = require(`./dcinvites.json`)
+
+
+
+// Mongo db definiton
+>>>>>>> 5a5827c5d164b553e899162de23e22b60ff44640
 const mongoose = require('mongoose')
 const customschema = require('./schemas/custom-commands')
 client.player = new Player(client);
@@ -15,9 +25,11 @@ client.config = require('./config/bot');
 client.emotes = client.config.emojis;
 client.filters = client.config.filters;
 client.commands = new discord.Collection();
-const Commando = require('discord.js-commando')
+const Commando = require('discord.js-commando');
 
-// Dies ist der Code für die Mongo-DB-Verbindung
+
+
+// Mongo DB connection
 mongoose.connect('mongodb+srv://PatriotZest:techwayempire@techempiregermany.gp4jq.mongodb.net/Data',{
          useUnifiedTopology : true,
          useNewUrlParser : true,
@@ -37,6 +49,7 @@ fs.readdirSync('./commands').forEach(dirs => {
 
 // anti swear part
 client.on('message', async message => {
+<<<<<<< HEAD
 	let yes = false;
    
     var i;
@@ -45,6 +58,22 @@ client.on('message', async message => {
         yes = true; 
     }
 	if(yes){
+=======
+	let yes = false;   
+	var filter1;
+    for(filter1 = 0;filter1 < swears.length; filter1++) {
+      if(message.content.toLowerCase().includes(swears[filter1].toLowerCase()))
+        yes = true; 
+	}
+	if(yes){
+		let roleID = "850684245927788554";
+	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+
+	let bypass = message.guild.roles.cache.get("850684245927788554");
+
+	if(message.member.roles.cache.has(bypass.id)) return
+
+>>>>>>> 5a5827c5d164b553e899162de23e22b60ff44640
 		message.delete()
 		let yesembed = new discord.MessageEmbed()
 			.setTitle('Swear')
@@ -67,36 +96,442 @@ client.on('message', async message => {
 })
 
 
+<<<<<<< HEAD
+
+
+
+
+=======
+//@everyone filter
+client.on('message', async message => {
+	let yes = false;
+	var Filter2;
+    for(Filter2 = 0;Filter2 < everyone.length; Filter2++) {
+      if(message.content.toLowerCase().includes(everyone[Filter2].toLowerCase()))
+        yes = true; 
+    }
+	if(yes){
+		message.delete()
+		let yesembed = new discord.MessageEmbed()
+			.setTitle('Everyone-Ping')
+			.setThumbnail(message.author.displayAvatarURL())
+			.addField('by', message.author.tag)
+			.addField('User ID', message.author.id)
+			.addField('Message deleted', message.content)
+			.setFooter('Time deleted', client.user.displayAvatarURL())
+			.setTimestamp()
+		let userembed = new discord.MessageEmbed()
+			.setTitle('Everyone Ping')
+			.setThumbnail(message.author.displayAvatarURL())
+			.setDescription("please don't ping @Everyone if you need help go to a support channel and ping @support-team")
+			.addField('Message deleted', message.content)
+			.setFooter('Time deleted', client.user.displayAvatarURL())
+			.setTimestamp()
+		client.channels.cache.get(`835519322909573190`).send(yesembed)
+		message.author.send(userembed)
+	}
+})
+//auto response
+client.on('message', (message) => {
+
+
+
+
+	if (message.author.bot) return;
+	
+	if (message.content.includes("anyone able to help") ){
+
+		let roleID = "850684245927788554";
+	
+	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+
+	let bypass = message.guild.roles.cache.get("850684245927788554");
+
+	if(message.member.roles.cache.has(bypass.id)) return;
+
+		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
+
+
+	}});
+
+
+	client.on('message', (message) => {
+
+
+
+
+		if (message.author.bot) return;
+		
+		if (message.content.includes("someone able to help?") ){
+	
+			let roleID = "850684245927788554";
+		
+		let membersWithRole = message.guild.roles.cache.get(roleID).members;
+	
+		let bypass = message.guild.roles.cache.get("850684245927788554");
+	
+		if(message.member.roles.cache.has(bypass.id)) return;
+	
+			message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
+	
+	
+		}});
+
+
+		client.on('message', (message) => {
+
+
+
+
+			if (message.author.bot) return;
+			
+			if (message.content.includes("help me?") ){
+		
+				let roleID = "850684245927788554";
+			
+			let membersWithRole = message.guild.roles.cache.get(roleID).members;
+		
+			let bypass = message.guild.roles.cache.get("850684245927788554");
+		
+			if(message.member.roles.cache.has(bypass.id)) return;
+		
+				message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
+		
+		
+			}});
+
+client.on('message', (message) => {
+	
+
+
+	if (message.content.includes("issue")) {
+
+
+		let roleID = "850684245927788554";
+		let membersWithRole = message.guild.roles.cache.get(roleID).members;
+	
+		let bypass = message.guild.roles.cache.get("850684245927788554");
+	
+		if(message.member.roles.cache.has(bypass.id)) return;
+	
+		if (message.author.bot) return;
+
+		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
+		}})
+	
+	
+	client.on('message', (message) => {
+	
+
+if (message.content.includes("Hey")) {
+
+
+
+	message.channel.send(`what's up?`)
+
+
+
+}
+
+
+if (message.content.includes("reinstall Windows")) {
+
+if(message.author.bot) return;
+
+	message.channel.send("This tutorial will lead you how to do a fresh windows installation:  (All your data will be gone,  back it up and use `!key` in case you need to back up your Product Key too, please save it somewhere safe and don't show us or anyone the key!)");
+       message.channel.send("https://youtu.be/bwJ_E-I9WRs");
+       message.channel.send("To figure out which key you need to use to boot to a usb, run the command `!bootkey`.");
+
+}
+
+
+
+		if (message.content.includes("virus")) {
+	
+	
+			let roleID = "850684245927788554";
+			let membersWithRole = message.guild.roles.cache.get(roleID).members;
+		
+			let bypass = message.guild.roles.cache.get("850684245927788554");
+		
+			if(message.member.roles.cache.has(bypass.id)) return;
+		
+			if (message.author.bot) return;
+	
+			message.channel.send("we suggest you to check for viruses and suspicious processes with: https://www.malwarebytes.com/mwb-download/thankyou/");
+	
+		
+		
+		
+		
+		
+		}})
+
+//Discord.gg filter
+client.on('message', async message => {
+	let yes = false;
+   
+    var filter3;
+    for(filter3 = 0;filter3 < dcinvites.length; filter3++) {
+      if(message.content.toLowerCase().includes(dcinvites[filter3].toLowerCase()))
+        yes = true; 
+    }
+	if(yes){
+		let roleID = "850684245927788554";
+	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+
+	let bypass = message.guild.roles.cache.get("850684245927788554");
+
+	if(message.member.roles.cache.has(bypass.id)) return
+
+	
+		message.delete()
+		let yesembed = new discord.MessageEmbed()
+			.setTitle('Self-promo')
+			.setThumbnail(message.author.displayAvatarURL())
+			.addField('by', message.author.tag)
+			.addField('User ID', message.author.id)
+			.addField('Message deleted', message.content)
+			.setFooter('Time deleted', client.user.displayAvatarURL())
+			.setTimestamp()
+		let userembed = new discord.MessageEmbed()
+			.setTitle('Self-Promo')
+			.setThumbnail(message.author.displayAvatarURL())
+			.setDescription("Self-Promo isn't allowed on TEG!")
+			.addField('Message deleted', message.content)
+			.setFooter('Time deleted', client.user.displayAvatarURL())
+			.setTimestamp()
+		client.channels.cache.get(`835519322909573190`).send(yesembed)
+		message.author.send(userembed)
+	}
+})
 
 
 
 
 
+client.on('messageDelete', async message => {
+	let channelID = '825774127661973545'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Message deleted`)
+		.setDescription(` message deleted send by ${message.member} in ${message.channel} **Content:** ${message.content}`)
+		.setColor("RED")
+		.setTimestamp()
+	message.guild.channels.cache.get(channelID).send(logdest)
+
+
+})
+
+client.on('guildBanAdd',  async (guild,user) =>  {
+	const fetchedLogs = await guild.fetchAuditLogs({
+		limit: 1,
+		type: 'MEMBER_BAN_ADD',
+	});
+	
+	
+	const banLog = fetchedLogs.entries.first();
+	
+	
+	if (!banLog) return console.log(`${user.tag} was banned from ${guild.name} but no audit log could be found.`);
+
+	
+	
+	
+	const { executor, target } = banLog;
+	
+	if (target.id === user.id) {
+		let channelID = '825788452103913522'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Banned`)
+		.setDescription(` User banned: ${user.tag} banned by: ${executor.tag}`)
+		.setColor("RED")
+		.setTimestamp()
+	client.channels.cache.get(channelID).send(logdest)
+
+		
+		
+	} else {
+		let channelID = '825788452103913522'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Banned`)
+		.setDescription(` User banned: ${user.tag} couldn't detect who banned them`)
+		.setColor("RED")
+		.setTimestamp()
+	client.channels.cache.get(channelID).send(logdest)
+	}
+});
+
+client.on('messageUpdate', (oldMessage, newMessage) => { 
+	if (!oldMessage.author) return;
+	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
+var embed = new discord.MessageEmbed()
+.setTitle(`Message updated`) 
+.setAuthor(newMessage.author.tag)
+ .setTimestamp()
+ .setColor('BLUE')
+ .addFields(
+	 {name: 'original:',value: oldMessage},
+	 {name: 'edit:', value: newMessage}    );
+ MessageLog.send(embed);
+ 
+
+});
+client.on('guildMemberUpdate', (oldMember, newMember) => {
+	if (!oldMember.nickname && newMember.nickname) {
+	  const membernewnicklog = new discord.MessageEmbed()
+		.setAuthor(`${newMember.user.tag}`, `${newMember.user.displayAvatarURL({ format: "png", dynamic: true })}`)
+		.setDescription(`**${newMember} nickname added**`)
+		.setFooter(`${newMember.user.username}'s ID: ${newMember.id}`)
+		.setTimestamp()
+		.setColor('BLUE')
+		.addField("New nickname", newMember.nickname)
+	  client.channels.cache.get('825773983000690698').send(membernewnicklog);
+	  return;
+	}
+	if (oldMember.nickname && !newMember.nickname) {
+	  const memberremovenicklog = new discord.MessageEmbed()
+		.setAuthor(`${oldMember.user.tag}`, `${oldMember.user.displayAvatarURL({ format: "png", dynamic: true })}`)
+		.setDescription(`**${oldMember} nickname reseted**`)
+		.setFooter(`${oldMember.user.username}'s ID: ${oldMember.id}`)
+		.setTimestamp()
+		.setColor('BLUE')
+		.addField("Old nickname", oldMember.nickname)
+	  client.channels.cache.get('825773983000690698').send(memberremovenicklog);
+	  return;
+	}
+	if (oldMember.nickname && newMember.nickname) {
+	  const memberchangednicklog = new discord.MessageEmbed()
+		.setAuthor(`${newMember.user.tag}`, `${newMember.user.displayAvatarURL({ format: "png", dynamic: true })}`)
+		.setDescription(`**${newMember} nickname changed**`)
+		.setFooter(`${newMember.user.username}'s ID: ${newMember.id}`)
+		.setTimestamp()
+		.setColor('BLUE')
+		.addField("Before", oldMember.nickname)
+		.addField("After", newMember.nickname);
+	  client.channels.cache.get('825773983000690698').send(memberchangednicklog);
+	  return;
+	}
+  });
+>>>>>>> 5a5827c5d164b553e899162de23e22b60ff44640
+
+  client.on("guildMemberUpdate", (oldMember, newMember) => {
+    
+    if (oldMember.roles.cache.size > newMember.roles.cache.size) {
+        
+        const Embed = new discord.MessageEmbed();
+        Embed.setColor("RED");
+        Embed.setAuthor(newMember.user.tag, newMember.user.avatarURL());
+        
+       
+        oldMember.roles.cache.forEach(role => {
+            if (!newMember.roles.cache.has(role.id)) {
+                Embed.addField("Role Removed", role);
+            }
+        });
+
+        client.channels.cache.get("825785679220703243").send(Embed);
+    } else if (oldMember.roles.cache.size < newMember.roles.cache.size) {
+        const Embed = new discord.MessageEmbed();
+        Embed.setColor("GREEN");
+        Embed.setAuthor(newMember.user.tag, newMember.user.avatarURL());
+        
+       
+        newMember.roles.cache.forEach(role => {
+            if (!oldMember.roles.cache.has(role.id)) {
+                Embed.addField("Role Added", role);
+            }
+        });
+        client.channels.cache.get("825785679220703243").send(Embed);
+    }
+});
+
+
+		
+
+
+	
+
+
+
+client.on('guildBanRemove',  async (guild,user) =>  {
+	const fetchedLogs = await guild.fetchAuditLogs({
+		limit: 1,
+		type: 'MEMBER_BAN_REMOVE',
+	});
+	
+	
+	const banLog = fetchedLogs.entries.first();
+	
+	
+	if (!banLog) return console.log(`${user.tag} was unbanned from ${guild.name} but no audit log could be found.`);
+
+	
+	
+	
+	const { executor, target } = banLog;
+	
+	if (target.id === user.id) {
+		let channelID = '825788500179812363'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Unbanned`)
+		.setDescription(` User Unbanned: ${user.tag} Unbanned by: ${executor.tag}`)
+		.setColor("RED")
+		.setTimestamp()
+	client.channels.cache.get(channelID).send(logdest)
+
+		
+		
+	} else {
+		let channelID = '825788500179812363'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Unbanned`)
+		.setDescription(` User Unbanned: ${user.tag} couldn't detect who Unbanned them`)
+		.setColor("RED")
+		.setTimestamp()
+	client.channels.cache.get(channelID).send(logdest)
+	}
+});
+
+
+
+
+
+
+
+//welcome and left notifications
 client.on('guildMemberAdd', member => {
-	let channelID = '809372910233583626'
+	let channelID = '824060103119470622'
 	let embed = new discord.MessageEmbed()
 		.setTitle(`Member Joined`)
 		.setDescription(`${member.user.tag} has joined TechEmpireGermany!`)
 		.setThumbnail(member.user.displayAvatarURL())
 		.setColor("GREEN")
 		.setTimestamp()
-		member.guild.channels.cache.get('809372910233583626').send(embed)
+		member.guild.channels.cache.get('824060103119470622').send(embed)
 	let userembed = new discord.MessageEmbed()
 		.setTitle(`Welcome to TechEmpireGermany!`)
 		.setDescription(`Check out the rules channel and enjoy your stay! 😀`)
 		.setColor("ORANGE")
 		member.send(userembed);
+		let channelID2 = '824319260540010557'
+	let embed2 = new discord.MessageEmbed()
+		.setTitle(`Member Joined`)
+		.setDescription(`${member.user.tag} has joined TechEmpireGermany!`)
+		.setColor("GREEN")
+		.setTimestamp()
+		member.guild.channels.cache.get('824319260540010557').send(embed2)
 })
 
+
 client.on('guildMemberRemove', (member) => {
-	let channelID = '809642061610745866'
+	let channelID = '824321468279947275'
 	let embed = new discord.MessageEmbed()
 		.setTitle(`Member Left`)
 		.setDescription(`${member.user.tag} has left TechEmpireGermany`)
 		.setThumbnail(member.user.displayAvatarURL())
 		.setColor("RED")
 		.setTimestamp()
-		client.channels.cache.get('809642061610745866').send(embed)
+		client.channels.cache.get('824321468279947275').send(embed)
 })
 
 const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));

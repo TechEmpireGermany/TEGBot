@@ -9,7 +9,8 @@ module.exports = {
         if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You do not have permissions to use this command.')
         const user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         if(!user) return message.channel.send('User not found.')
-        const reason = args.slice(1).join(" ")
+        let reason = args.slice(1).join(" ")
+        if(!reason) reason = 'Unspecified';
         db.findOne({ guildid: message.guild.id, user: user.user.id}, async(err, data) => {
             if(err) throw err;
             if(!data) {
@@ -33,7 +34,7 @@ module.exports = {
             data.save()
         });
         user.send(new MessageEmbed()
-            .setTitle('Member Warned')
+            .setTitle('Warning')
         	  .setThumbnail(user.user.displayAvatarURL())
        	  .addField('User warned', user)
         	  .addField('Warned by', message.author)
@@ -44,9 +45,10 @@ module.exports = {
         )
         message.react("✅")
         client.channels.cache.get(`824194262279127060`).send(new MessageEmbed()
-        .setTitle('Member Warned')
+        .setTitle('Warning')
         .setThumbnail(user.user.displayAvatarURL())
         .addField('User warned', user)
+        .addField('User ID', user.id)
         .addField('Warned by', message.author)
         .addField('Reason', reason)
         .setFooter('Time warned', client.user.displayAvatarURL())

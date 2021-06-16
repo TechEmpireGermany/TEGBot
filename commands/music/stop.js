@@ -18,6 +18,8 @@ module.exports = {
         client.player.setRepeatMode(message, false);
         client.player.stop(message);
 
+        message.delete();
+
         message.channel.send({
             embed: {
                 color: 'RED',

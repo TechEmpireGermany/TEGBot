@@ -22,7 +22,7 @@ async execute(client, message, args) {
 	message.react("✅");
 	suggestedEmbed.edit(acceptEmbed);
 	const user = await client.users.cache.find((u) => u.tag === data.author.name)
-	user.send("Your suggestion has been accepted by Phillip");
+	user.send("Your suggestion has been accepted by the owners");
 }catch(err){
 console.log(err)
 message.reply("That suggestion does not exist in this universe");

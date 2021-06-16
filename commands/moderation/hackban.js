@@ -11,7 +11,7 @@ module.exports = {
 	const userId = args[0]
 	
 	const embed = new Discord.MessageEmbed()
-	.setTitle('User Hackbanned')
+	.setTitle('Hackbanned')
 	.addField('ID banned', userId)
 	.addField('Banned by', message.author)
           .addField('Reason', reason)

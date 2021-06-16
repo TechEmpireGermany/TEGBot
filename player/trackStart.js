@@ -16,7 +16,7 @@ module.exports = (client, message, track) => {
         embed: {
             color: 'RED',
             author: { name: track.title },
-            footer: { text: 'Bot made by Philipp!' },
+            footer: { text: 'ready as always!' },
             fields: [
                 { name: 'channel', value: track.author, inline: true },
                 { name: 'requested by', value: track.requestedBy.username, inline: true },

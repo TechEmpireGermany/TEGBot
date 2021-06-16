@@ -19,6 +19,8 @@ module.exports = {
 
         client.player.clearQueue(message);
 
+        
+
         message.channel.send(`${client.emotes.success} - The queue has just been **removed** !`);
     },
 };

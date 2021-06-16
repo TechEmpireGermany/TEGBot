@@ -23,6 +23,8 @@ module.exports = {
 
         client.player.skip(message);
 
+        message.delete();
+
         message.channel.send({
             embed: {
                 color: 'GREEN',

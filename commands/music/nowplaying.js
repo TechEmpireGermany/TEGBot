@@ -16,6 +16,9 @@ module.exports = {
 
         Object.keys(client.player.getQueue(message).filters).forEach((filterName) => client.player.getQueue(message).filters[filterName]) ? filters.push(filterName) : false;
 
+
+        message.delete();
+
         message.channel.send({
             embed: {
                 color: 'RED',
