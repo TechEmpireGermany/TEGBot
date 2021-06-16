@@ -14,6 +14,7 @@ module.exports = {
         if(!hexcolour){
             hexcolour = "#fc8403"
         }
+        if(namer.includes("#")) return message.reply("The colour comes after name dude and you cannot have # in names of roles")
         if(!hexcolour.includes("#")) return message.reply("Something went wrong most probably in `hexcolour` (Bot did not crash)")
         if(!isNaN(perm)) return message.reply("Perms dont have numbers dude run `!permlist` to see the perms available +_+")
         if(!perm){
