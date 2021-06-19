@@ -43,12 +43,7 @@ fs.readdirSync('./commands').forEach(dirs => {
 });
 
 
-client.on(`message` , async (message) => { 
 
-	if (message.channel.type === `dm`) return
-	if(message.author.bot) return
-
-})
 
 // anti swear part
 client.on('message', async message => {
@@ -317,6 +312,10 @@ client.on('message', async (message) => {
 
 	if (dmmessage)  {
 if (message.author.bot) return;
+if (!message.content) message.content = `couldn't detect, probably a image or unknown Emoji`
+if(!message.author) message.author = `not able to detect`
+if(!message.author.id) message.author.id = `couldn't detect the ID of the User`
+
 
 
 		let channelID = `853984661360869386`
@@ -339,6 +338,11 @@ if (message.author.bot) return;
 
 client.on('messageDelete', async message => {
 	if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+	if(!message.member) message.member = `not detected`
+	if(!message.channel) message.channel = `not detected`
+	if(!message.content) message.content = `not detected`
+
+
 	let channelID = '825774127661973545'
 	let logdest = new discord.MessageEmbed()
 		.setTitle(`Message deleted`)
@@ -396,6 +400,9 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 client.on('messageUpdate', async (oldMessage,newMessage) => { 
 	if(oldMessage.channel.type === `dm`) return newMessage.channel.send("**Hello this is a automatically send message, as a reply to a DM if you want to tell us something please do it on the Server thank you**")
 	if(oldMessage.author.bot) return;
+	if(!oldMessage) oldMessage = `not detected`
+	if(!newMessage) newMessage = `not detected`
+	if(!oldMessage.author.tag) oldMessage.author.tag = `couldn't detect`
 	
 	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
 const embed = new discord.MessageEmbed()
