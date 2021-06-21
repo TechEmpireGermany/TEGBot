@@ -35,6 +35,6 @@ module.exports = {
       .addField("Status",'undone')
     message.react("✅");
 
-    message.guild.channels.cache.get("856599798262399036").send(embed);
+    message.guild.channels.cache.get("856623578371719168").send(embed);
     }
     };

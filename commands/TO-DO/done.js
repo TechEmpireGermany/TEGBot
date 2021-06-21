@@ -24,7 +24,7 @@ module.exports = {
 
 
 
-            const todoChannel = message.guild.channels.cache.get('856599798262399036')
+            const todoChannel = message.guild.channels.cache.get('856623578371719168')
              const todoEmbed = await todoChannel.messages.fetch(messageID);
           
           const data =todoEmbed.embeds[0];
