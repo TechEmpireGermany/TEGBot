@@ -53,23 +53,27 @@ client.on("message", async (message) => {
 
 	const Levels = require("discord.js-leveling");
 
-	
-
-
-  
-   
-  
-   const randomAmountOfXp = Math.floor(Math.random() * 20) + 10; 
-   const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
-  
-   if(hasLeveledUp) {
-
 	let roleID = "850684245927788554";
 	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
 	let staff = message.guild.roles.cache.get("850684245927788554");
 
-	if(!message.member.roles.cache.has(staff.id)) return;
+	if(message.member.roles.cache.has(staff.id))  {
+
+
+		const randomAmountOfXp = Math.floor(Math.random() * 20) + 10; 
+
+	
+
+  
+   
+  
+   
+   const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
+  
+   if(hasLeveledUp) {
+
+	
 
 
 
@@ -89,7 +93,9 @@ client.on("message", async (message) => {
 		.setTimestamp()
 	client.channels.cache.get(channelID).send(logdest)
 
-	  }
+   }
+	}
+	  
   });
 
 
@@ -175,8 +181,10 @@ client.on('message', (message) => {
 
 
 	if (message.author.bot) return;
+
+	const autoresponsetriggers = require("./autorespone.json")
 	
-	if (message.content.includes("anyone able to help") ){
+	if (message.content.includes(autoresponsetriggers) ){
 		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 
 		let roleID = "850684245927788554";
@@ -191,81 +199,14 @@ client.on('message', (message) => {
 
 
 	}});
-
-
-	client.on('message', (message) => {
-
-
-
-
-		if (message.author.bot) return;
-		
-		if (message.content.includes("someone able to help?") ){
-			if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
-	
-			let roleID = "850684245927788554";
-		
-		let membersWithRole = message.guild.roles.cache.get(roleID).members;
-	
-		let bypass = message.guild.roles.cache.get("850684245927788554");
-	
-		if(message.member.roles.cache.has(bypass.id)) return;
-	
-			message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
-	
-	
-		}});
-
-
-		client.on('message', (message) => {
-
-
-
-
-			if (message.author.bot) return;
-			
-			if (message.content.includes("help me?") ){
-				if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
-		
-				let roleID = "850684245927788554";
-			
-			let membersWithRole = message.guild.roles.cache.get(roleID).members;
-		
-			let bypass = message.guild.roles.cache.get("850684245927788554");
-		
-			if(message.member.roles.cache.has(bypass.id)) return;
-		
-				message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
-		
-		
-			}});
-
-client.on('message', (message) => {
-	
-
-
-	if (message.content.includes("issue")) {
-
-		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
-
-
-		let roleID = "850684245927788554";
-		let membersWithRole = message.guild.roles.cache.get(roleID).members;
-	
-		let bypass = message.guild.roles.cache.get("850684245927788554");
-	
-		if(message.member.roles.cache.has(bypass.id)) return;
-	
-		if (message.author.bot) return;
-
-		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue ,  ping @Support Team`);
-		}})
 	
 	
 	client.on('message', (message) => {
 	
 
 if (message.content.includes("Hey")) {
+
+	if(message.author.bot) return 
 
 
 
