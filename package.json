@@ -50,6 +50,7 @@
     "discord-ytdl-core": "^5.0.0",
     "discord.js": "^12.5.1",
     "discord.js-commando": "^0.12.2",
+    "discord.js-leveling": "^5.4.0",
     "dom-serializer": "^1.2.0",
     "domelementtype": "^2.1.0",
     "domhandler": "^4.0.0",
