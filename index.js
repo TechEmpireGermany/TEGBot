@@ -42,7 +42,55 @@ fs.readdirSync('./commands').forEach(dirs => {
     };
 });
 
+//activity points system
 
+
+
+client.on("message", async (message) => {
+	if (!message.guild) return;
+	if (message.author.bot) return; 
+
+
+	const Levels = require("discord.js-leveling");
+
+	
+
+
+  
+   
+  
+   const randomAmountOfXp = Math.floor(Math.random() * 20) + 10; 
+   const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
+  
+   if(hasLeveledUp) {
+
+	let roleID = "850684245927788554";
+	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+
+	let staff = message.guild.roles.cache.get("850684245927788554");
+
+	if(!message.member.roles.cache.has(staff.id)) return;
+
+
+
+	  
+		  const user = await Levels.fetch(message.author.id, message.guild.id);
+
+		 
+		  
+		  console.log(`Activity  Point given: ${message.author.tag}`)
+
+
+		  let channelID = '824194262279127060'
+	let logdest = new discord.MessageEmbed()
+		.setTitle(`Activity Point given`)
+		.setDescription(` ${message.author.tag} Got a new Activity Point!`)
+		.setColor("BLUE")
+		.setTimestamp()
+	client.channels.cache.get(channelID).send(logdest)
+
+	  }
+  });
 
 
 // anti swear part
