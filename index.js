@@ -254,7 +254,7 @@ const modtalk = message.channel.id ===`824057837491453982`
 	
 	let trigger = false;   
 	var autorespone;
-    for(autorespone = 0;autoresponse < autoresponsetriggers.length; autorespone++) {
+    for(autorespone = 0; autorespone < autoresponsetriggers.length; autorespone++) {
       if(message.content.toLowerCase().includes(autoresponsetriggers[autorespone].toLowerCase()))
         trigger = true; 
 
@@ -307,7 +307,7 @@ const vcchat = message.channel.id === `824061207924965416`
 
 	let trigger = false;   
 	var autorespone;
-    for(autorespone = 0;autoresponse < autoresponsetriggers.length; autorespone++) {
+    for(autorespone = 0; autorespone < autoresponsetriggers.length; autorespone++) {
       if(message.content.toLowerCase().includes(autoresponsetriggers[autorespone].toLowerCase()))
         trigger = true; 
 
