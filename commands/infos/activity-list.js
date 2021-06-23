@@ -9,6 +9,8 @@ module.exports = {
 
     const Levels = require("discord.js-leveling")
 
+    if(!message.member.hasPermission("ADMINSTRATOR")) return message.channel.send("you don't have permissions  to use this Command!")
+
 
 
 
@@ -17,6 +19,8 @@ module.exports = {
     if (rawLeaderboard.length < 1) return reply("Nobody's in leaderboard yet.");
     
     const leaderboard = await Levels.computeLeaderboard(client, rawLeaderboard, true); 
+
+    
     
     const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nActivity: ${e.level}\nActivity Points: ${e.xp.toLocaleString()}`); 
     
