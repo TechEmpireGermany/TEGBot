@@ -122,6 +122,18 @@ const modtalk = message.channel.id ===`824057837491453982`
 
 // anti swear part
 client.on('message', async message => {
+
+const spteamstaffchannel = message.channel.id === `824065058388181013`
+const modtalk = message.channel.id === `824057837491453982`
+const botdevelopment = message.channel.id === `824216769442218004`
+const botcommands = message.channel.id === `824326748426469396`
+const Ownerarea = message.channel.id ===`824066908097740910`
+
+
+
+
+
+
 	let yes = false;   
 	var filter1;
     for(filter1 = 0;filter1 < swears.length; filter1++) {
@@ -130,12 +142,17 @@ client.on('message', async message => {
 	}
 	if(yes){
 		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
-		let roleID = "850684245927788554";
-	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+		
+if (spteamstaffchannel) return
+if (modtalk) return
+if (botdevelopment) return
+if (botcommands) return
+if (Ownerarea) return
 
-	let bypass = message.guild.roles.cache.get("850684245927788554");
 
-	if(message.member.roles.cache.has(bypass.id)) return
+
+
+	
 
 		message.delete()
 		let yesembed = new discord.MessageEmbed()
@@ -161,6 +178,17 @@ client.on('message', async message => {
 
 //@everyone filter
 client.on('message', async message => {
+	
+	const spteamstaffchannel = message.channel.id === `824065058388181013`
+const modtalk = message.channel.id === `824057837491453982`
+const botdevelopment = message.channel.id === `824216769442218004`
+const botcommands = message.channel.id === `824326748426469396`
+const Ownerarea = message.channel.id ===`824066908097740910`
+	
+	
+	
+	
+	
 	let yes = false;
 	var Filter2;
     for(Filter2 = 0;Filter2 < everyone.length; Filter2++) {
@@ -168,13 +196,18 @@ client.on('message', async message => {
         yes = true; 
     }
 	if(yes){
+		
+if(message.member.hasPermission("ADMINSTRATOR")) return 
+if (spteamstaffchannel) return
+if (modtalk) return
+if (botdevelopment) return
+if (botcommands) return
+if (Ownerarea) return
+		
+		
+		
+		
 		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
-		let roleID = "824063311829925898";
-	let membersWithRole = message.guild.roles.cache.get(roleID).members;
-
-	let bypass = message.guild.roles.cache.get("824063311829925898");
-
-	if(message.member.roles.cache.has(bypass.id)) return
 		message.delete()
 		let yesembed = new discord.MessageEmbed()
 			.setTitle('Everyone-Ping')
@@ -201,6 +234,20 @@ client.on('message', (message) => {
 
 
 
+
+
+
+	const generalsupport = message.channel.id === `824059680905101333`
+const gamingsupport = message.channel.id === `824059755935957023`
+const softwaresupport = message.channel.id === `824059831513907200`
+const hardwaresupport = message.channel.id === `824059920826499093`
+const vcchat = message.channel.id === `824061207924965416`
+const modtalk = message.channel.id ===`824057837491453982`
+
+
+
+
+
 	if (message.author.bot) return;
 
 	const autoresponsetriggers = require("./autorespone.json")
@@ -216,22 +263,62 @@ client.on('message', (message) => {
 
 	if(message.member.roles.cache.has(bypass.id)) return;
 
-		message.channel.send(`${message.member}If you need help go in a support channel if you´re not already in one and state your issue , ping @Support Team`);
+
+if(!generalsupport) return
+if(!gamingsupport) return
+if(!softwaresupport) return
+if(!hardwaresupport) return
+if(!vcchat) return
+if(!modtalk) return
+
+
+		message.channel.send(`${message.member}please state your issue and ping @Support Team`);
 
 
 	}});
 	
 	
 	client.on('message', (message) => {
+
+
+		const generalsupport = message.channel.id === `824059680905101333`
+const gamingsupport = message.channel.id === `824059755935957023`
+const softwaresupport = message.channel.id === `824059831513907200`
+const hardwaresupport = message.channel.id === `824059920826499093`
+const vcchat = message.channel.id === `824061207924965416`
+
+
+	const autoresponsetriggers = require("./autorespone.json")
 	
 
-if (message.content.includes("Hey")) {
+if (message.content.includes(autoresponsetriggers)) {
+	if (message.channel.type === `dm`) return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+
+
+	let roleID = "850684245927788554";
+			let membersWithRole = message.guild.roles.cache.get(roleID).members;
+		
+			let bypass = message.guild.roles.cache.get("850684245927788554");
+		
+			if(message.member.roles.cache.has(bypass.id)) return
+
+
+
+
+
+
+if(generalsupport) return
+if(gamingsupport) return
+if(softwaresupport) return
+if(hardwaresupport) return
+if(vcchat) return
+
 
 	if(message.author.bot) return 
 
 
 
-	message.channel.send(`what's up?`)
+	message.channel.send(`${message.member} please go in a support channel , state your issue and Ping @Support team`)
 
 
 
