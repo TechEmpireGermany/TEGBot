@@ -47,6 +47,7 @@ fs.readdirSync('./commands').forEach(dirs => {
 
 
 client.on("message", async (message) => {
+	if(message.channel.type === `dm`) return ;
 	if (!message.guild) return;
 	if (message.author.bot) return; 
 
@@ -59,6 +60,23 @@ client.on("message", async (message) => {
 	let staff = message.guild.roles.cache.get("850684245927788554");
 
 	if(message.member.roles.cache.has(staff.id))  {
+const generalsupport = message.channel.id === `824059680905101333`
+const gamingsupport = message.channel.id === `824059755935957023`
+const softwaresupport = message.channel.id === `824059831513907200`
+const hardwaresupport = message.channel.id === `824059920826499093`
+const vcchat = message.channel.id === `824061207924965416`
+const modtalk = message.channel.id ===`824057837491453982`
+
+
+
+		if(message.member.hasPermission("ADMINSTRATOR")) return 
+
+		if (!generalsupport) return
+		if(!gamingsupport) return
+		if(!softwaresupport) return
+		if(!hardwaresupport) return
+		if(!vcchat) return
+		if(!modtalk) return
 
 
 		const randomAmountOfXp = Math.floor(Math.random() * 20) + 10; 
