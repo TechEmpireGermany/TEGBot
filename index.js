@@ -229,7 +229,7 @@ if (Ownerarea) return
 	}
 })
 //auto response
-client.on('message', (message) => {
+client.on('message',(message) => {
 
 
 
@@ -250,15 +250,9 @@ const modtalk = message.channel.id ===`824057837491453982`
 
 	
 
-	const autoresponsetriggers = require("./autorespone.json")
-	
-	let trigger = false;   
-	var autorespone;
-    for(autorespone = 0; autorespone < autoresponsetriggers.length; autorespone++) {
-      if(message.content.toLowerCase().includes(autoresponsetriggers[autorespone].toLowerCase()))
-        trigger = true; 
+	if (message.content.includes("issue","is anybody able to help me?", "can  i get some help?", "i need help", "anyone able to help")) {
 
-		if(trigger) {
+	
 
 
 			if (message.author.bot) return;
@@ -284,7 +278,7 @@ if(!modtalk) return
 
 		message.channel.send(`${message.member}please state your issue and ping @Support Team`);
 
-		}}})
+	}})
 		
 	
 	
@@ -298,20 +292,16 @@ const hardwaresupport = message.channel.id === `824059920826499093`
 const vcchat = message.channel.id === `824061207924965416`
 
 
-	const autoresponsetriggers = require("./autorespone.json")
+	
+if (message.content.includes("issue","is anybody able to help me?", "can  i get some help?", "i need help", "anyone able to help")) {
+
 	
 
 
 
 
 
-	let trigger = false;   
-	var autorespone;
-    for(autorespone = 0; autorespone < autoresponsetriggers.length; autorespone++) {
-      if(message.content.toLowerCase().includes(autoresponsetriggers[autorespone].toLowerCase()))
-        trigger = true; 
 
-		if(trigger) {
 
 
 
@@ -345,7 +335,7 @@ if(vcchat) return
 
 
 
-		}}
+}
 
 
 if (message.content.includes("reinstall Windows")) {
