@@ -248,11 +248,21 @@ const modtalk = message.channel.id ===`824057837491453982`
 
 
 
-	if (message.author.bot) return;
+	
 
 	const autoresponsetriggers = require("./autorespone.json")
 	
-	if (message.content.includes(autoresponsetriggers) ){
+	let trigger = false;   
+	var autorespone;
+    for(autorespone = 0;autoresponse < autoresponsetriggers.length; autorespone++) {
+      if(message.content.toLowerCase().includes(autoresponsetriggers[autorespone].toLowerCase()))
+        trigger = true; 
+
+		if(trigger) {
+
+
+			if (message.author.bot) return;
+
 		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 
 		let roleID = "850684245927788554";
@@ -274,8 +284,8 @@ if(!modtalk) return
 
 		message.channel.send(`${message.member}please state your issue and ping @Support Team`);
 
-
-	}});
+		}}})
+		
 	
 	
 	client.on('message', (message) => {
@@ -291,7 +301,20 @@ const vcchat = message.channel.id === `824061207924965416`
 	const autoresponsetriggers = require("./autorespone.json")
 	
 
-if (message.content.includes(autoresponsetriggers)) {
+
+
+
+
+	let trigger = false;   
+	var autorespone;
+    for(autorespone = 0;autoresponse < autoresponsetriggers.length; autorespone++) {
+      if(message.content.toLowerCase().includes(autoresponsetriggers[autorespone].toLowerCase()))
+        trigger = true; 
+
+		if(trigger) {
+
+
+
 	if (message.channel.type === `dm`) return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 
 
@@ -322,7 +345,7 @@ if(vcchat) return
 
 
 
-}
+		}}
 
 
 if (message.content.includes("reinstall Windows")) {
