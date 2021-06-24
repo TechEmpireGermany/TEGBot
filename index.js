@@ -72,7 +72,7 @@ const modtalk = message.channel.id ===`824057837491453982`
 
 
 
-		if(message.member.hasPermission("ADMINSTRATOR")) return 
+		if  (message.member.hasPermission("ADMINSTRATOR")) return 
 
 		if (!generalsupport) return
 		if(!gamingsupport) return
@@ -229,67 +229,17 @@ if (Ownerarea) return
 	}
 })
 //auto response
-client.on('message',(message) => {
-
-
-
-
-
-
-
-	const generalsupport = message.channel.id === `824059680905101333`
-const gamingsupport = message.channel.id === `824059755935957023`
-const softwaresupport = message.channel.id === `824059831513907200`
-const hardwaresupport = message.channel.id === `824059920826499093`
-const vcchat = message.channel.id === `824061207924965416`
-const modtalk = message.channel.id ===`824057837491453982`
-
-
-
-
-
-	
-
-	if (message.content.includes("issue","is anybody able to help me?", "can  i get some help?", "i need help", "anyone able to help")) {
-
-	
-
-
-			if (message.author.bot) return;
-
-		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
-
-		let roleID = "850684245927788554";
-	
-	let membersWithRole = message.guild.roles.cache.get(roleID).members;
-
-	let bypass = message.guild.roles.cache.get("850684245927788554");
-
-	if(message.member.roles.cache.has(bypass.id)) return;
-
-
-if(!generalsupport) return
-if(!gamingsupport) return
-if(!softwaresupport) return
-if(!hardwaresupport) return
-if(!vcchat) return
-if(!modtalk) return
-
-
-		message.channel.send(`${message.member}please state your issue and ping @Support Team`);
-
-	}})
 		
 	
 	
 	client.on('message', (message) => {
 
 
-		const generalsupport = message.channel.id === `824059680905101333`
-const gamingsupport = message.channel.id === `824059755935957023`
-const softwaresupport = message.channel.id === `824059831513907200`
-const hardwaresupport = message.channel.id === `824059920826499093`
-const vcchat = message.channel.id === `824061207924965416`
+		let generalsupport = message.channel.id === `824059680905101333`
+let gamingsupport = message.channel.id === `824059755935957023`
+let softwaresupport = message.channel.id === `824059831513907200`
+let hardwaresupport = message.channel.id === `824059920826499093`
+let vcchat = message.channel.id === `824061207924965416`
 
 
 	
