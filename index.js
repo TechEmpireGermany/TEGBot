@@ -486,11 +486,11 @@ client.on('messageUpdate', async (oldMessage,newMessage) => {
 
 
 	let roleID = "850684245927788554";
-	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+	let membersWithRole = oldMessage.guild.roles.cache.get(roleID).members;
 
-	let bypass = message.guild.roles.cache.get("850684245927788554");
+	let bypass = oldMessage.guild.roles.cache.get("850684245927788554");
 
-	if(message.member.roles.cache.has(bypass.id)) return
+	if(oldMessage.member.roles.cache.has(bypass.id)) return
 
 
 	
