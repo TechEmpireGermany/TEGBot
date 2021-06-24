@@ -9,7 +9,13 @@ module.exports = {
 
     const Levels = require("discord.js-leveling")
 
-    if(!message.member.hasPermission("ADMINSTRATOR")) return message.channel.send("you don't have permissions  to use this Command!")
+    let ownerid = "824063311829925898";
+		let membersWithRole = message.guild.roles.cache.get(ownerid).members;
+	
+		let owners = message.guild.roles.cache.get("824063311829925898");
+
+		if (!message.member.roles.cache.has(owners.id)) return message.channel.send("you don't have permissions to use this command!")
+
 
 
 
