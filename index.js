@@ -67,12 +67,22 @@ const hardwaresupport = message.channel.id === `824059920826499093`
 const vcchat = message.channel.id === `824061207924965416`
 const modtalk = message.channel.id ===`824057837491453982`
 
+
+
+
+
+
 	if(message.member.roles.cache.has(staff.id))  {
 
 
+		let ownerid = "824063311829925898";
+		let membersWithRole = message.guild.roles.cache.get(ownerid).members;
+	
+		let owners = message.guild.roles.cache.get("824063311829925898");
 
+		if (message.member.roles.cache.has(owners.id)) return
 
-		if  (message.member.hasPermission("ADMINSTRATOR")) return 
+		
 
 		if (!generalsupport) return
 		if(!gamingsupport) return
@@ -80,6 +90,7 @@ const modtalk = message.channel.id ===`824057837491453982`
 		if(!hardwaresupport) return
 		if(!vcchat) return
 		if(!modtalk) return
+
 
 
 		const randomAmountOfXp = Math.floor(Math.random() * 20) + 10; 
