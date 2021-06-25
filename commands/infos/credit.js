@@ -20,8 +20,8 @@ module.exports = {
                     {name: 'Swear-Filter:', value: "Developed by: Patriot Zest"},
                     {name: 'Swear List:', value: "Topaz, converted and improved by BenTheTechGuy"},
                     {name: 'swear-filter improvements:', value: "Improved by: Philipp"},
-                    {name: 'Activity Points System', value: "Developed by Philipp" },
-                    {name: 'To-Do System', value: "Developed by Philipp" },
+                    {name: 'Activity Points System:', value: "Developed by Philipp" },
+                    {name: 'To-Do System:', value: "Developed by Philipp" },
                     {name: 'Music:', value: "Developed by: Philipp"},
                     {name: 'embed-messsages', value: "Developed by: Philipp"},
                     {name: 'Auto-response', value: "Developed by: Philipp"},
@@ -29,7 +29,25 @@ module.exports = {
                     {name: 'Support Team Information:', value: "Developed by: BenTheTechGuy"},
                     {name: 'Support Team Custom Commands:', value: "Contributed by: Gracey"},
                     {name: 'Website:', value: "Created and Designed by: BenTheTechGuy"},
-                    {name: 'Project Organizer:', value: "BenTheTechGuy"}
+                    {name: 'Project Organizer:', value: "BenTheTechGuy"},
                 ]
             },
-        });}}
+    
+      
+        })
+
+       
+
+        message.channel.send({
+            embed: {
+                color: 'PURPLE',
+                author: { name: "Github" },
+                fields: [
+                    {name: 'Link:' , value: "https://github.com/TechEmpireGermany"}
+
+                ]
+
+            },
+
+
+        })}}
