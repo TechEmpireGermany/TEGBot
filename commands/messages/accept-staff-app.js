@@ -1,3 +1,4 @@
+const discord = require("discord.js")
 module.exports = {
     name: 'staffappaccept',
     aliases: [`staff-accept`],
@@ -6,17 +7,29 @@ module.exports = {
 
     async execute(client, message, args,roles) {
 
-        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
+        var user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         if(!user) return message.channel.send('User not found.')
-        const custompart = args.slice(1).join(" ")
+        var custompart = args.slice(1).join(" ")
+        if (!custompart) custompart = 'Thanks for supporting our Server!'
+
+        
 
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permissions to use this command.')
 
+      
+
 
         message.react("✅");
-        message.channel.send(`**send: your staff application on TEG got accepted please open a ticket for more information--${custompart}**`)
+const embedmessage = new discord.MessageEmbed()
+.setTitle('Your staff Application got accepeted!')
+.setColor('BLUE')
+.setDescription(` your staff application on TEG got accepted please open a ticket for more information`)
+.setFooter(custompart)
 
-        user.send(`your staff application on TEG got accepted please open a ticket for more information**--**${custompart}`)
+
+        message.channel.send(embedmessage)
+
+        user.send(embedmessage)
         
 
 
