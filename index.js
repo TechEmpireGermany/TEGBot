@@ -152,7 +152,12 @@ const Ownerarea = message.channel.id ===`824066908097740910`
         yes = true; 
 	}
 	if(yes){
-		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+		const dmreplyembed = new discord.MessageEmbed()
+		.setTitle('Automatically DM reply')
+		.setDescription(`Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you`)
+		.setFooter('we can see every DM you send to the Bot')
+		.setColor('BLUE')
+		if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
 		
 if (spteamstaffchannel) return
 if (modtalk) return
@@ -215,10 +220,15 @@ if (botdevelopment) return
 if (botcommands) return
 if (Ownerarea) return
 		
+const dmreplyembed = new discord.MessageEmbed()
+.setTitle('Automatic DM reply')
+.setDescription(`Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you`)
+.setFooter('we can see every DM you send to the Bot')
+.setColor('BLUE')
+if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
 		
 		
 		
-		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
 		message.delete()
 		let yesembed = new discord.MessageEmbed()
 			.setTitle('Everyone-Ping')
@@ -264,9 +274,14 @@ if (message.content.includes("issue","is anybody able to help me?", "can  i get 
 
 
 
+	const dmreplyembed = new discord.MessageEmbed()
+	.setTitle('Automatic DM reply')
+	.setDescription(`Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you`)
+	.setFooter('we can see every DM you send to the Bot')
+	.setColor('BLUE')
+	if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
 
-
-	if (message.channel.type === `dm`) return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+	
 
 
 	let roleID = "850684245927788554";
@@ -301,7 +316,12 @@ if(vcchat) return
 
 if (message.content.includes("reinstall Windows")) {
 
-	if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+	const dmreplyembed = new discord.MessageEmbed()
+	.setTitle('Automatic DM reply')
+	.setDescription(`Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you`)
+	.setFooter('we can see every DM you send to the Bot')
+	.setColor('BLUE')
+	if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
 
 if(message.author.bot) return;
 
@@ -315,7 +335,12 @@ if(message.author.bot) return;
 
 		if (message.content.includes("virus")) {
 
-			if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+			const dmreplyembed = new discord.MessageEmbed()
+		.setTitle('Automatic DM reply')
+		.setDescription(`Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you`)
+		.setFooter('we can see every DM you send to the Bot')
+		.setColor('BLUE')
+		if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
 	
 	
 			let roleID = "850684245927788554";
@@ -346,7 +371,17 @@ client.on('message', async message => {
         yes = true; 
     }
 	if(yes){
-		if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+		
+
+		const dmreplyembed = new discord.MessageEmbed()
+		.setTitle('Automatic DM reply')
+		.setDescription(`Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you`)
+		.setFooter('we can see every DM you send to the Bot')
+		.setColor('BLUE')
+		if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
+
+
+
 		let roleID = "850684245927788554";
 	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
@@ -409,6 +444,17 @@ if(!message.author.id) message.author.id = `couldn't detect the ID of the User`
 
 client.on('messageDelete', async message => {
 
+	
+	const dmreplyembed = new discord.MessageEmbed()
+		.setTitle('Automatic DM reply')
+		.setDescription(`Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you`)
+		.setFooter('we can see every DM you send to the Bot')
+		.setColor('BLUE')
+		if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
+	
+	
+	
+	
 	let roleID = "850684245927788554";
 	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
@@ -417,7 +463,7 @@ client.on('messageDelete', async message => {
 	if(message.member.roles.cache.has(bypass.id)) return
 
 
-	if (message.channel.type === 'dm') return message.channel.send("**Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you**")
+	
 	if(!message.member) message.member = `not detected`
 	if(!message.channel) message.channel = `not detected`
 	if(!message.content) message.content = `not detected`
@@ -478,7 +524,14 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 
 
 client.on('messageUpdate', async (oldMessage,newMessage) => { 
-	if(oldMessage.channel.type === `dm`) return newMessage.channel.send("**Hello this is a automatically send message, as a reply to a DM if you want to tell us something please do it on the Server thank you**")
+	const dmreplyembed = new discord.MessageEmbed()
+	.setTitle('Automatic DM reply')
+	.setDescription(`Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you`)
+	.setFooter('we can see every DM you send to the Bot')
+	.setColor('BLUE')
+	if (oldMessage.channel.type === 'dm') return message.channel.send(dmreplyembed)
+
+
 	if(oldMessage.author.bot) return;
 	if(!oldMessage) oldMessage = `not detected`
 	if(!newMessage) newMessage = `not detected`
