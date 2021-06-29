@@ -570,7 +570,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 		.setTimestamp()
 		.setColor('BLUE')
 		.addField(`New nickname`, newMember.nickname)
-	  client.channels.cache.get('825774068313358346').send(membernewnicklog);
+	  client.channels.cache.get('825773983000690698').send(membernewnicklog);
 	  return;
 	}
 	if (oldMember.nickname && !newMember.nickname) {
@@ -582,7 +582,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 		.setTimestamp()
 		.setColor('BLUE')
 		.addField(`Old nickname`, oldMember.nickname)
-	  client.channels.cache.get('825774068313358346').send(memberremovenicklog);
+	  client.channels.cache.get('825773983000690698').send(memberremovenicklog);
 	  return;
 	}
 	if (oldMember.nickname && newMember.nickname) {
@@ -595,7 +595,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 		.setColor('BLUE')
 		.addField(`Before`, oldMember.nickname)
 		.addField(`After`, newMember.nickname);
-	  client.channels.cache.get('825774068313358346').send(memberchangednicklog);
+	  client.channels.cache.get('825773983000690698').send(memberchangednicklog);
 	  return;
 	}
   });
