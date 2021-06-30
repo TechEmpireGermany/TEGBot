@@ -139,6 +139,7 @@
     "signal-exit": "^3.0.3",
     "sliced": "^1.0.1",
     "soundcloud-scraper": "^4.0.3",
+    "sourcebin": "^4.2.5",
     "sparse-bitfield": "^3.0.3",
     "spotify-uri": "^2.1.0",
     "spotify-url-info": "^2.2.0",
@@ -155,7 +156,7 @@
     "ws": "^7.4.2",
     "yallist": "^4.0.0",
     "youtube-sr": "^2.0.5",
-    "ytdl-core": "^4.4.5"
+    "ytdl-core": "^4.8.3"
   },
   "bin": {
     "TEG": "./index.js"
