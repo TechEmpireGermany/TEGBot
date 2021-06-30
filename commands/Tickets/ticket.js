@@ -1,4 +1,4 @@
-const sourcebin = require('sourcebin_js')
+const sourcebin = require('sourcebin')
 const discord = require('discord.js');
 const fs = require('fs');
 const db = require('../../schemas/ticketss')
