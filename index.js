@@ -695,10 +695,10 @@ client.on('message', async message => {
         setTimeout(() => {
              let embed = new discord.MessageEmbed()
                 .setTitle("Time to bump the Server")
-                .setDescription("could anyone please run !d bump? ")
+                .setDescription("could anyone please run d! bump?")
                 .setTimestamp();
             message.channel.send(embed);
-            message.channel.send("<@825049916413444196>");
+            message.channel.send("@825049916413444196")
         }, 7200000);
     }
 });
