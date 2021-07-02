@@ -5,7 +5,7 @@ module.exports = {
     name: 'userinfo',
     description: "tells info",
      async execute (client,message, args){
-     let mentionedMember = message.mentions.members.first() || message.member 
+        var mentionedMember = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
      
      let act = mentionedMember.presence.game
      let status = mentionedMember.presence.status
