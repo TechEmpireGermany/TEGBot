@@ -93,7 +93,7 @@ const modtalk = message.channel.id ===`824057837491453982`
 
 
 
-		const randomAmountOfXp = Math.floor(Math.random() * 20) + 10; 
+		const randomAmountOfXp = Math.floor(Math.random() * 05) + 1; 
 
 	
 
@@ -692,6 +692,17 @@ client.on('guildBanRemove',  async (guild,user) =>  {
 client.on('message', async message => {
     if ( message.embeds.length && message.author.username == "DISBOARD" && message.embeds[ 0 ].description.indexOf(":thumbsup:") > -1
     ) {
+		message.channel.send(`${message.member} thank you for bumping the Server!`)
+        setTimeout(() => {
+            message.channel.send("Time to bump the server!\n<@&825049916413444196> could anybody please run `!d bump`?")
+        }, 7200000);
+    }
+});
+
+client.on('message', async message => {
+    if (message.content === "set bump") 
+     {
+		 message.channel.send("**bump set bump reminder reacts in the next 2 hours**")
         setTimeout(() => {
             message.channel.send("Time to bump the server!\n<@&825049916413444196> could anybody please run `!d bump`?")
         }, 7200000);
