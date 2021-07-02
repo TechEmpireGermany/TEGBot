@@ -53,19 +53,25 @@ client.on("message", async (message) => {
 
 
 	const Levels = require("discord.js-leveling");
-
+	
+	let ownerid = "824063311829925898";
 	let roleID = "850684245927788554";
-	let membersWithRole = message.guild.roles.cache.get(roleID).members;
+	let membersWithRole = message.guild.roles.cache.get(roleID,ownerid).members;
 
 	let staff = message.guild.roles.cache.get("850684245927788554");
 
 
-	const generalsupport = message.channel.id === `824059680905101333`
-const gamingsupport = message.channel.id === `824059755935957023`
-const softwaresupport = message.channel.id === `824059831513907200`
-const hardwaresupport = message.channel.id === `824059920826499093`
-const vcchat = message.channel.id === `824061207924965416`
-const modtalk = message.channel.id ===`824057837491453982`
+	const ticketcreate = message.channel.id === '824684376398233670'
+	const suggestions = message.channel.id === '824926277868978186'
+	const general = message.channel.id === '824042976371277888'
+	const games = message.channel.id === '824059985998381138'
+	const setups = message.channel.id === '824737989850169355'
+	const memes = message.channel.id === '824738477291601980'
+	const music = message.channel.id === '824067063941300224'
+	const funbots = message.channel.id === '832535838289297408'
+	const supportteam = message.channel.id === '824065058388181013'
+	const bump = message.channel.id === '824185956549787659'
+
 
 
 
@@ -74,9 +80,19 @@ const modtalk = message.channel.id ===`824057837491453982`
 
 	if(message.member.roles.cache.has(staff.id))  {
 
+if(ticketcreate) return
+if(suggestions) return
+if(general) return
+if(games) return
+if(setups) return
+if(memes) return
+if(music) return
+if(funbots) return
+if(supportteam) return
+if(bump) return
 
-		let ownerid = "824063311829925898";
-		let membersWithRole = message.guild.roles.cache.get(ownerid).members;
+		
+		
 	
 		let owners = message.guild.roles.cache.get("824063311829925898");
 
@@ -84,16 +100,9 @@ const modtalk = message.channel.id ===`824057837491453982`
 
 		
 
-		if (!generalsupport) return
-		if(!gamingsupport) return
-		if(!softwaresupport) return
-		if(!hardwaresupport) return
-		if(!vcchat) return
-		if(!modtalk) return
+		
 
-
-
-		const randomAmountOfXp = Math.floor(Math.random() * 05) + 1; 
+		const randomAmountOfXp = Math.floor(Math.random() * 10) + 1; 
 
 	
 
