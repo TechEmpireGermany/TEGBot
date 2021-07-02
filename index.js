@@ -693,12 +693,7 @@ client.on('message', async message => {
     if ( message.embeds.length && message.author.username == "DISBOARD" && message.embeds[ 0 ].description.indexOf(":thumbsup:") > -1
     ) {
         setTimeout(() => {
-             let embed = new discord.MessageEmbed()
-                .setTitle("Time to bump the Server")
-                .setDescription("could anyone please run !d bump?")
-                .setTimestamp();
-            message.channel.send(embed);
-            message.channel.send("@825049916413444196")
+            message.channel.send("Time to bump the server!\n<@&825049916413444196> could anybody please run `!d bump`?")
         }, 7200000);
     }
 });
