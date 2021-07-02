@@ -22,7 +22,7 @@ module.exports = {
 
     const rawLeaderboard = await Levels.fetchLeaderboard(message.guild.id, 10); 
 
-    if (rawLeaderboard.length < 1) return reply("Nobody's in leaderboard yet.");
+    if (rawLeaderboard.length < 1) return message.channel.send("Nobody's in the list yet.");
     
     const leaderboard = await Levels.computeLeaderboard(client, rawLeaderboard, true); 
 
