@@ -726,6 +726,9 @@ client.on('guildMemberAdd', (member) => {
 		.setColor("GREEN")
 		.setTimestamp()
 		member.guild.channels.cache.get('824319260540010557').send(embed2)
+		// Autoroles 
+		var role = member.guild.roles.cache.find(role => role.name == "M100")
+		member.roles.add(role);
 })
 
 
