@@ -6,9 +6,8 @@ module.exports = {
 
     async execute(client, message,args) {
 
-        const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
-        if(!channel) return message.channel.send('Channel not found.')
-        const custompart = args.slice(1).join(" ")
+        
+        const custompart = args.slice(0).join(" ")
 
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permissions to use this command.')
 
