@@ -701,7 +701,7 @@ client.on('guildBanRemove',  async (guild,user) =>  {
 client.on('message', async message => {
     if ( message.embeds.length && message.author.username == "DISBOARD" && message.embeds[ 0 ].description.indexOf(":thumbsup:") > -1
     ) {
-		message.channel.send(`${message.member} thank you for bumping the Server!`)
+		message.channel.send(`thank you for bumping the Server!`)
         setTimeout(() => {
             message.channel.send("Time to bump the server!\n<@&825049916413444196> could anybody please run `!d bump`?")
         }, 7200000);
