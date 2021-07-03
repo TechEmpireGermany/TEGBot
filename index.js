@@ -718,14 +718,60 @@ client.on('message', async message => {
     }
 });
 
+//Invite Logs
+const invites = {};
+
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', async () => {
+ 
+  await wait(1000);
+
+  
+  client.guilds.cache.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
 
 
 
 
 //welcome and left notifications
 client.on('guildMemberAdd', (member) => {
+
+
+
+	//invite logs
+
+member.guild.fetchInvites().then(guildInvites => {
+	 
+	const ei = invites[member.guild.id];
+   
+	invites[member.guild.id] = guildInvites;
+	
+	const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+   
+	const inviter = client.users.cache.get(invite.inviter.id);
+
+	let invitelogid  = '824319260540010557'
+	if(!invite.code) invite.code = 'not detected'
+	if(!invite.uses) invite.uses = 'not detected'
+	if(!inviter.tag) inviter.tag = 'Unknown'
+const inviteembed = new discord.MessageEmbed()
+.setTitle('Invite')
+.setAuthor(member.user.tag)
+.setDescription(`Joined using Invite Code: ${invite.code} this code got used ${invite.uses} times since creation`)
+.addField('Invited by:' ,inviter.tag)
+.setColor('GREEN')
+client.channels.cache.get(invitelogid).send(inviteembed)
+
+})
 	
 
+	//welcome
 	let channelID = '824060103119470622'
 	let embed = new discord.MessageEmbed()
 		.setTitle(`Member Joined`)
@@ -751,6 +797,7 @@ client.on('guildMemberAdd', (member) => {
 		member.roles.add(role);
 })
 
+//left log
 
 client.on('guildMemberRemove', (member) => {
 	let channelID = '824321468279947275'
