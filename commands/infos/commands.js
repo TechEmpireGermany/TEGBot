@@ -27,6 +27,7 @@ module.exports = {
                     {name: `!justask` , value: "If someone asks to ask."},
                     {name: `!coding` , value: "gives a invite to a Coding support server"},
                     {name: `!cortex` , value: "Download link for Razer Cortex."},
+                    {name: `!Downdetector` , value: "Posts a Link to Downdetector.com."},
                     {name: `hw-chrome` , value: "how to disable hardware acceleration on Chrome."}
 
                 ]
