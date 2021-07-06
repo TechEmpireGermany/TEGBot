@@ -1,0 +1,45 @@
+Main dependencies(1-24) 
+
+MongoDB connection( 28-32)
+
+loading commands(35-43)
+
+activity Points System(45-140)
+
+swearFilter(143-201)
+
+@Everyone Filter (204-260)
+
+auto response(261-371)
+
+discord.gg Filter(373-421)
+
+DM Log(423-446)
+
+message delete log (454-490)
+
+Ban add log (492-529)
+
+message edit log (535-568)
+
+Nickname's log (571-610)
+
+role added/removed log (612-651)
+
+unbanned log (661-698)
+
+Bump Reminder (700-709)
+
+set bump(711-719)
+
+Invite logs (721-737+743-771)
+
+welcome and joined message(774-794)
+
+autoroles(795-798)
+
+left log (800-811)
+
+event loading and client login (813-828)
+
+ 
