@@ -19,6 +19,7 @@ module.exports = {
 	.addField('Messages Deleted', amount)
 	.addField('Deleted by', message.author)
 	.setFooter('Time deleted', client.user.displayAvatarURL())
+    .addField('deleted in Channel:', message.channel)
 	.setTimestamp()
 	client.channels.cache.get(`824194262279127060`).send(embed)
 
