@@ -719,19 +719,10 @@ client.on('message', async message => {
 });
 
 
+//invite logs
 
 
-
-
-//welcome and left notifications
-client.on('guildMemberAdd', (member) => {
-
-
-
-	//invite logs
-
-
-	var invites = {};
+var invites = {};
 
 
 const wait = require('util').promisify(setTimeout);
@@ -747,6 +738,16 @@ client.on('ready', async () => {
     });
   });
 });
+
+
+
+
+//welcome and left notifications
+client.on('guildMemberAdd', (member) => {
+
+
+
+	
 
 member.guild.fetchInvites().then(guildInvites => {
 	 
