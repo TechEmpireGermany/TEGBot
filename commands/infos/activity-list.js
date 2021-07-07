@@ -1,3 +1,4 @@
+const discord = require("discord.js")
 module.exports = {
     name: 'activity-list',
     aliases: [`activity`],
@@ -29,10 +30,15 @@ module.exports = {
     
     
     const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nActivity: ${e.level}\nActivity Points: ${e.xp.toLocaleString()}`); 
+
+
     
+const activityembed = new discord.MessageEmbed()
+.setTitle('Activity')
+.setDescription(`**Activity**:\n\n${lb.join("\n\n")}`)
+.setColor('BLUE')
 
-
-    message.channel.send(`**Activity**:\n\n${lb.join("\n\n")}`);
+   message.channel.send(activityembed)
 
 
 
