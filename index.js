@@ -719,7 +719,7 @@ client.on('message', async message => {
 });
 
 //Invite Logs
-const invites = {};
+var invites = {};
 
 
 const wait = require('util').promisify(setTimeout);
@@ -752,14 +752,14 @@ member.guild.fetchInvites().then(guildInvites => {
    
 	invites[member.guild.id] = guildInvites;
 	
-	const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+	var invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
    
-	const inviter = client.users.cache.get(invite.inviter.id);
+	var inviter = client.users.cache.get(invite.inviter.id);
 
 	let invitelogid  = '824319260540010557'
-	if(!invite.code) invite.code = 'not detected'
-	if(!invite.uses) invite.uses = 'not detected'
-	if(!inviter.tag) inviter.tag = 'Unknown'
+	if(!invite) invite.code = 'not detected'
+	if(!invites) invite.uses = 'not detected'
+	if(!inviter) inviter.tag = 'Unknown'
 const inviteembed = new discord.MessageEmbed()
 .setTitle('Invite')
 .setAuthor(member.user.tag)
