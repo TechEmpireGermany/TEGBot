@@ -718,8 +718,20 @@ client.on('message', async message => {
     }
 });
 
-//Invite Logs
-var invites = {};
+
+
+
+
+
+//welcome and left notifications
+client.on('guildMemberAdd', (member) => {
+
+
+
+	//invite logs
+
+
+	var invites = {};
 
 
 const wait = require('util').promisify(setTimeout);
@@ -735,16 +747,6 @@ client.on('ready', async () => {
     });
   });
 });
-
-
-
-
-//welcome and left notifications
-client.on('guildMemberAdd', (member) => {
-
-
-
-	//invite logs
 
 member.guild.fetchInvites().then(guildInvites => {
 	 
@@ -763,7 +765,7 @@ member.guild.fetchInvites().then(guildInvites => {
 const inviteembed = new discord.MessageEmbed()
 .setTitle('Invite')
 .setAuthor(member.user.tag)
-.setDescription(`Joined using Invite Code: ${invite.code} this code got used ${invite.uses} times since creation`)
+.setDescription(`Joined using Invite Code: ${invite.code}`)
 .addField('Invited by:' ,inviter.tag)
 .setColor('GREEN')
 client.channels.cache.get(invitelogid).send(inviteembed)
