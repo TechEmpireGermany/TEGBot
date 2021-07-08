@@ -755,13 +755,12 @@ member.guild.fetchInvites().then(guildInvites => {
    
 	invites[member.guild.id] = guildInvites;
 	
-	var invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+	var invite = guildInvites.find(i => ei.get(i.code));
    
 	var inviter = client.users.cache.get(invite.inviter.id);
 
 	let invitelogid  = '824319260540010557'
 	if(!invite) invite.code = 'not detected'
-	if(!invites) invite.uses = 'not detected'
 	if(!inviter) inviter.tag = 'Unknown'
 const inviteembed = new discord.MessageEmbed()
 .setTitle('Invite')
