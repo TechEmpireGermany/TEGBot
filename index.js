@@ -209,10 +209,12 @@ const modtalk = message.channel.id === `824057837491453982`
 const botdevelopment = message.channel.id === `824216769442218004`
 const botcommands = message.channel.id === `824326748426469396`
 const Ownerarea = message.channel.id ===`824066908097740910`
+	let ownerid = "824063311829925898";
+	let membersWithRole = message.guild.roles.cache.get(ownerid).members;
+
 	
 	
-	
-	
+
 	
 	let yes = false;
 	var Filter2;
@@ -221,8 +223,7 @@ const Ownerarea = message.channel.id ===`824066908097740910`
         yes = true; 
     }
 	if(yes){
-		
-if(message.member.hasPermission("ADMINSTRATOR")) return 
+		if (message.member.roles.cache.has(owners.id)) return
 if (spteamstaffchannel) return
 if (modtalk) return
 if (botdevelopment) return
