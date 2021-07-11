@@ -223,19 +223,22 @@ const Ownerarea = message.channel.id ===`824066908097740910`
         yes = true; 
     }
 	if(yes){
-		if (message.member.roles.cache.has(owners.id)) return
+		const dmreplyembed = new discord.MessageEmbed()
+.setTitle('Automatic DM reply')
+.setDescription(`Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you`)
+.setFooter('we can see every DM you send to the Bot')
+.setColor('BLUE')
+if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
+		
+		
+if (message.member.roles.cache.has(owners.id)) return
 if (spteamstaffchannel) return
 if (modtalk) return
 if (botdevelopment) return
 if (botcommands) return
 if (Ownerarea) return
 		
-const dmreplyembed = new discord.MessageEmbed()
-.setTitle('Automatic DM reply')
-.setDescription(`Hello this is a automatically send message as reply to a DM, please don't message our BOT if you want to tell us something do it on the Server thank you`)
-.setFooter('we can see every DM you send to the Bot')
-.setColor('BLUE')
-if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
+
 		
 		
 		
