@@ -209,8 +209,7 @@ const modtalk = message.channel.id === `824057837491453982`
 const botdevelopment = message.channel.id === `824216769442218004`
 const botcommands = message.channel.id === `824326748426469396`
 const Ownerarea = message.channel.id ===`824066908097740910`
-	let ownerid = "824063311829925898";
-	let membersWithRole = message.guild.roles.cache.get(ownerid).members;
+	
 
 	
 	
@@ -229,8 +228,10 @@ const Ownerarea = message.channel.id ===`824066908097740910`
 .setFooter('we can see every DM you send to the Bot')
 .setColor('BLUE')
 if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
-		
-		
+		let ownerid = "824063311829925898";
+	let membersWithRole = message.guild.roles.cache.get(ownerid).members;
+
+		let owners = message.guild.roles.cache.get('824063311829925898')
 if (message.member.roles.cache.has(owners.id)) return
 if (spteamstaffchannel) return
 if (modtalk) return
