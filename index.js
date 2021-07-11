@@ -134,10 +134,12 @@ if(bump) return
 		.setTimestamp()
 	client.channels.cache.get(channelID).send(logdest)
 
-   }
-	}
+	
+
+   }}})
+	
 	  
-  });
+  
 
 
 // anti swear part
@@ -764,7 +766,7 @@ member.guild.fetchInvites().then(guildInvites => {
    
 	var inviter = client.users.cache.get(invite.inviter.id);
 
-	let invitelogid  = '824319260540010557'
+	let invitelogid  = '833815923457654844'
 	if(!invite) invite.code = 'not detected'
 	if(!inviter) inviter.tag = 'Unknown'
 const inviteembed = new discord.MessageEmbed()
@@ -831,5 +833,7 @@ for (const file of player) {
     const event = require(`./player/${file}`);
     client.player.on(file.split(".")[0], event.bind(null, client));
 };
+
+
 
 client.login(client.config.discord.token);
