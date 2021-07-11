@@ -45,27 +45,7 @@ module.exports = {
     } else {
         displayRoles = roles.slice(20).join(' ')
     }
-    let user = mentionedMember;
-
-    message.guild.fetchInvites()
-    .then
-
-    (invites =>
-        {
-            const userInvites = invites.array().filter(o => o.inviter.id === user.id);
-            var userInviteCount = 0;
-            for(var i=0; i < userInvites.length; i++)
-            {
-                var invite = userInvites[i];
-                userInviteCount += invite['uses'];
-            }
-              let invitecountembed = new Discord.MessageEmbed()
-              .setTitle('Invitecount')
-              .setAuthor(mentionedMember.user.tag)
-              .setDescription(userInviteCount)  
-              message.channel.send(invitecountembed)
-        
-            })
+   
 
 
             const userlevel = await Levels.fetch(mentionedMember.id, message.guild.id);
