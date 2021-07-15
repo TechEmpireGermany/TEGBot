@@ -4,7 +4,7 @@ module.exports = {
 	name: "hackban",
 	description: "Bans a member from a server",
 	async execute (client, message, args){
-	if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You don't have the right perms");
+	if(!message.member.hasPermission("BAN_MEMBERS")) return 
 	if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send("I dont have the perms to ban");
 
 	let reason = args.slice(1).join(" ")

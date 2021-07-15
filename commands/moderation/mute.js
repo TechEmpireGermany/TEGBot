@@ -6,7 +6,7 @@ module.exports = {
     description: "Mutes a member from the server",
 
     execute(client, message, args) {
-          if(!message.member.hasPermission("MANAGE_MANAGES")) return message.reply("You cannot run this");
+          if(!message.member.hasPermission("MANAGE_MANAGES")) return 
 	if(message.member.hasPermission("MANAGE_MESSAGES")){
               var member = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
               if(!args[0]) return message.reply("Mention a member man")

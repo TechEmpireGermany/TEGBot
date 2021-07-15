@@ -5,7 +5,7 @@ module.exports = {
 
     async execute(client, message, args) {
         const amount = args.join(" ");
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have permission to delete messages")
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return 
         if(!amount) return message.reply('Please provide an amount of messages for me to delete')
         if(amount > 100) return message.reply('You cannot delete more than 100 messages at once')
         if(amount < 1) return message.reply('You need to delete at least one message')

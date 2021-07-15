@@ -6,7 +6,7 @@ module.exports = {
 
     execute(client, message, args) {
 
-        if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('You can\'t use that!')
+        if(!message.member.hasPermission("KICK_MEMBERS")) return 
         if(!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send('I don\'t have the right permissions.')
 
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
