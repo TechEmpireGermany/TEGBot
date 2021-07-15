@@ -750,8 +750,12 @@ client.on('guildMemberAdd', (member) => {
 		invites[member.guild.id] = guildInvites;
 
 		const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+		const inviter = client.users.cache.get(invite.inviter.id)
+	
 
-		const inviter = client.users.cache.get(invite.inviter.id);
+		
+		
+
 
 	let logchanneldestid = '833815923457654844' 
 let newinviteembed = new discord.MessageEmbed()
