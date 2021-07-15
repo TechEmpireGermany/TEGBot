@@ -727,57 +727,45 @@ client.on('message', async message => {
 
 
 //invite logs
-
-
-var invites = {};
-
-
+const invites = {};
 const wait = require('util').promisify(setTimeout);
-
 client.on('ready', async () => {
- 
-  await wait(1000);
+	await wait(3500);
 
-  
-  client.guilds.cache.forEach(g => {
-    g.fetchInvites().then(guildInvites => {
-      invites[g.id] = guildInvites;
-    });
-  });
-});
-
-
+	client.guilds.cache.forEach(g => {
+		g.fetchInvites().then(guildInvites => {
+		  invites[g.id] = guildInvites;
+		});
+	  });
+	
 
 
 //welcome and left notifications
 client.on('guildMemberAdd', (member) => {
 
+	member.guild.fetchInvites().then(guildInvites => {
 
+		const ei = invites[member.guild.id];
 
-	
+		invites[member.guild.id] = guildInvites;
 
-member.guild.fetchInvites().then(guildInvites => {
-	 
-	const ei = invites[member.guild.id];
-   
-	invites[member.guild.id] = guildInvites;
-	
-	var invite = guildInvites.find(i => ei.get(i.code));
-   
-	var inviter = client.users.cache.get(invite.inviter.id);
+		const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
 
-	let invitelogid  = '833815923457654844'
-	if(!invite) invite.code = 'not detected'
-	if(!inviter) inviter.tag = 'Unknown'
-const inviteembed = new discord.MessageEmbed()
+		const inviter = client.users.cache.get(invite.inviter.id);
+
+	let logchanneldestid = '833815923457654844' 
+let newinviteembed = new discord.MessageEmbed()
 .setTitle('Invite')
 .setAuthor(member.user.tag)
-.setDescription(`Joined using Invite Code: ${invite.code}`)
-.addField('Invited by:' ,inviter.tag)
+.addField('Invited by:', inviter.tag)
+.addField('Used invite code:',invite.code)
+.addField('Code uses since creation;', invite.uses)
 .setColor('GREEN')
-client.channels.cache.get(invitelogid).send(inviteembed)
+client.channels.cache.get(logchanneldestid).send(newinviteembed)
 
-})
+	})
+
+
 	
 
 	//welcome
@@ -805,6 +793,8 @@ client.channels.cache.get(invitelogid).send(inviteembed)
 		var role = member.guild.roles.cache.find(role => role.name == "M100")
 		member.roles.add(role);
 })
+
+	})
 
 //left log
 
