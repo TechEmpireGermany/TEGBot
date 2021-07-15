@@ -757,9 +757,9 @@ client.on('guildMemberAdd', (member) => {
 let newinviteembed = new discord.MessageEmbed()
 .setTitle('Invite')
 .setAuthor(member.user.tag)
-.addField('Invited by:', inviter.tag)
-.addField('Used invite code:',invite.code)
-.addField('Code uses since creation;', invite.uses)
+.addField('Invited by', inviter.tag)
+.addField('Used invite code',invite.code)
+.addField('Code uses since creation', invite.uses)
 .setColor('GREEN')
 client.channels.cache.get(logchanneldestid).send(newinviteembed)
 
