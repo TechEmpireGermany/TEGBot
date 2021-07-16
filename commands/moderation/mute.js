@@ -47,11 +47,13 @@ module.exports = {
         		.addField('Reason', reason)
 		client.channels.cache.get(`824194262279127060`).send(unmutembed)
           }, ms(time));
-} else{
-     return message.channel.send("nothing here");
-}
-}
-}
+
+    
+     }}
+
+
+
+
         		
 	     
                              
