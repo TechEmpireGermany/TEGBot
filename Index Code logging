@@ -6,40 +6,40 @@ loading commands(35-43)
 
 activity Points System(45-139)
 
-swearFilter(143-201)
+swearFilter(145-203)
 
-@Everyone Filter (204-265)
+@Everyone Filter (206-267)
 
-auto response(261-371)
+auto response(268-378)
 
-discord.gg Filter(373-421)
+discord.gg Filter(380-428)
 
-DM Log(423-446)
+DM Log(430-453)
 
-message delete log (454-490)
+message delete log (461-497)
 
-Ban add log (492-529)
+Ban add log (499-536)
 
-message edit log (535-568)
+message edit log (542-575)
 
-Nickname's log (571-610)
+Nickname's log (578-617)
 
-role added/removed log (612-651)
+role added/removed log (619-658)
 
-unbanned log (661-698)
+unbanned log (668-705)
 
-Bump Reminder (700-709)
+Bump Reminder (707-716)
 
-set bump(711-719)
+set bump(718-726)
 
-Invite logs (722-740+752-773)
+Invite logs (729-739+746-770)
 
-welcome and joined message(774-794)
+welcome and joined message(775-795)
 
-autoroles(795-798)
+autoroles(796-801)
 
-left log (800-811)
+left log (803-814)
 
-event loading and client login (813-828)
+event loading and client login (816-833)
 
  
