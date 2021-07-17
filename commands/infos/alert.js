@@ -11,7 +11,16 @@ module.exports = {
         if(!user) return message.channel.send('User not found.')
         const aldesc = args.slice(1).join(" ")
         if (!aldesc) return message.channel.send("would you please mention a reason for alerting the modteam?")
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Why should a Moderator alert other Moderators using a Command? i returned weak action dude ._.")
+      
+        let roleID2 = "824067621841666099"
+        let roleID = "824056092899934218";
+        let membersWithRole = message.guild.roles.cache.get(roleID,roleID).members;
+    
+        let bypass = message.guild.roles.cache.get("824056092899934218");
+        let bypass2 = message.guild.role.cache.get("824067621841666099") 
+    
+        if(message.member.roles.cache.has(bypass.id)) return message.channel.send("why should a moderator alert his team using this command? i returned weak action dude ._.")
+        if(message.member.roles.cache.has(bypass2.id)) return message.channel.send("why should a moderator alert his team using this command? i returned weak action dude ._.")
 
         message.delete()
 
