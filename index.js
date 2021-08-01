@@ -26,7 +26,7 @@ const Commando = require('discord.js-commando');
 
 
 // Mongo DB connection
-mongoose.connect('mongodb+srv://TEG:GET@teg.tfwbd.mongodb.net/Data',{
+mongoose.connect('Database',{
          useUnifiedTopology : true,
          useNewUrlParser : true,
 }).then(console.log("Connected to mongo db"));
