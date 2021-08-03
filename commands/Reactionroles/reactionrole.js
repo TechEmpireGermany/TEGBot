@@ -10,7 +10,7 @@ module.exports = {
       message.channel.send("err");
       throw err;
     } 
-        let role = message.member.guild.roles.cache.find(role => role.name === "Bump Reminders");
+        let role = message.member.guild.roles.cache.get('825049916413444196')
         const collector = reactionMessage.createReactionCollector(
             (reaction, user) => message.guild.members.cache.find((member) => member.id === user.id),
             { dispose: true }
