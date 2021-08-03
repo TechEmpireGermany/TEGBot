@@ -1,6 +1,6 @@
 const fs = require('fs');
 const discord = require('discord.js');
-
+process.removeAllListeners();
 const client = new discord.Client({ disableMentions: 'everyone' });
 
 const { Player } = require('discord-player');
