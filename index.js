@@ -1,6 +1,6 @@
 const fs = require('fs');
 const discord = require('discord.js');
-process.removeAllListeners();
+
 const client = new discord.Client({ disableMentions: 'everyone' });
 
 const { Player } = require('discord-player');
@@ -794,7 +794,7 @@ client.channels.cache.get(logchanneldestid).send(newinviteembed)
 		.setTimestamp()
 		member.guild.channels.cache.get('824319260540010557').send(embed2)
 		// Autoroles 
-		var role = member.guild.roles.cache.find(role => role.name == "M100")
+		var role = member.guild.roles.cache.find(role => role.name == "M150")
 		member.roles.add(role);
 })
 
