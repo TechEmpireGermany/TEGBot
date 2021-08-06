@@ -297,7 +297,7 @@ if (message.content.includes("issue","is anybody able to help me?", "can  i get 
 	.setColor('BLUE')
 	if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
 
-	
+	if(message.author.bot) return 
 
 
 	let roleID = "850684245927788554";
@@ -318,8 +318,6 @@ if(softwaresupport) return
 if(hardwaresupport) return
 if(vcchat) return
 
-
-	if(message.author.bot) return 
 
 
 
