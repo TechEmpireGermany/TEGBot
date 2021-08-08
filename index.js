@@ -54,23 +54,24 @@ client.on("message", async (message) => {
 
 	const Levels = require("discord.js-leveling");
 	
-	let ownerid = "824063311829925898";
-	let roleID = "850684245927788554";
-	let membersWithRole = message.guild.roles.cache.get(roleID,ownerid).members;
+	
 
-	let staff = message.guild.roles.cache.get("850684245927788554");
+	let membersWithRole = message.guild.roles.cache.get(bypassstuffandstaffstuff.BypassroleandstaffID,bypassstuffandstaffstuff.OwnerRoleID).members;
+
+	let staff = message.guild.roles.cache.get(bypassstuffandstaffstuff.BypassroleandstaffID);
 
 
-	const ticketcreate = message.channel.id === '824684376398233670'
-	const suggestions = message.channel.id === '824926277868978186'
-	const general = message.channel.id === '824042976371277888'
-	const games = message.channel.id === '824059985998381138'
-	const setups = message.channel.id === '824737989850169355'
-	const memes = message.channel.id === '824738477291601980'
-	const music = message.channel.id === '824067063941300224'
-	const funbots = message.channel.id === '832535838289297408'
-	const supportteam = message.channel.id === '824065058388181013'
-	const bump = message.channel.id === '824185956549787659'
+
+
+
+
+
+
+
+
+
+
+	
 
 
 
@@ -80,21 +81,21 @@ client.on("message", async (message) => {
 
 	if(message.member.roles.cache.has(staff.id))  {
 
-if(ticketcreate) return
-if(suggestions) return
-if(general) return
-if(games) return
-if(setups) return
-if(memes) return
-if(music) return
-if(funbots) return
-if(supportteam) return
-if(bump) return
+if(message.channel.id === bypassstuffandstaffstuff.levelingchannelbypass) return
+
+
+
+
+
+
+
+
+
 
 		
 		
 	
-		let owners = message.guild.roles.cache.get("824063311829925898");
+		let owners = message.guild.roles.cache.get(bypassstuffandstaffstuff.OwnerRoleID);
 
 		if (message.member.roles.cache.has(owners.id)) return
 
@@ -126,7 +127,7 @@ if(bump) return
 		  console.log(`Activity  Point given: ${message.author.tag}`)
 
 
-		  let channelID = '824194262279127060'
+		  let channelID =  bypassstuffandstaffstuff.stafflogs
 	let logdest = new discord.MessageEmbed()
 		.setTitle(`Activity Point given`)
 		.setDescription(` ${message.author.tag} Got a new Activity Point!`)
@@ -145,11 +146,11 @@ if(bump) return
 // anti swear part
 client.on('message', async message => {
 
-const spteamstaffchannel = message.channel.id === `824065058388181013`
-const modtalk = message.channel.id === `824057837491453982`
-const botdevelopment = message.channel.id === `824216769442218004`
-const botcommands = message.channel.id === `824326748426469396`
-const Ownerarea = message.channel.id ===`824066908097740910`
+
+
+
+
+	
 
 
 
@@ -170,11 +171,12 @@ const Ownerarea = message.channel.id ===`824066908097740910`
 		.setColor('BLUE')
 		if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
 		
-if (spteamstaffchannel) return
-if (modtalk) return
-if (botdevelopment) return
-if (botcommands) return
-if (Ownerarea) return
+if (message.channel.id === bypassstuffandstaffstuff.Swearfilterbypassedchannels) return
+
+
+
+
+
 
 
 
@@ -197,7 +199,7 @@ if (Ownerarea) return
 			.addField('Message deleted', message.content)
 			.setFooter('Time deleted', client.user.displayAvatarURL())
 			.setTimestamp()
-		client.channels.cache.get(`835519322909573190`).send(yesembed)
+		client.channels.cache.get(bypassstuffandstaffstuff.messagefilterlog).send(yesembed)
 		message.author.send(userembed)
 	}
 })
@@ -206,11 +208,12 @@ if (Ownerarea) return
 //@everyone filter
 client.on('message', async message => {
 	
-	const spteamstaffchannel = message.channel.id === `824065058388181013`
-const modtalk = message.channel.id === `824057837491453982`
-const botdevelopment = message.channel.id === `824216769442218004`
-const botcommands = message.channel.id === `824326748426469396`
-const Ownerarea = message.channel.id ===`824066908097740910`
+	
+
+
+
+
+
 	
 
 	
@@ -230,16 +233,17 @@ const Ownerarea = message.channel.id ===`824066908097740910`
 .setFooter('we can see every DM you send to the Bot')
 .setColor('BLUE')
 if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
-		let ownerid = "824063311829925898";
+		let ownerid = bypassstuffandstaffstuff.OwnerRoleID;
 	let membersWithRole = message.guild.roles.cache.get(ownerid).members;
 
-		let owners = message.guild.roles.cache.get('824063311829925898')
+		let owners = message.guild.roles.cache.get(bypassstuffandstaffstuff.OwnerRoleID)
 if (message.member.roles.cache.has(owners.id)) return
-if (spteamstaffchannel) return
-if (modtalk) return
-if (botdevelopment) return
-if (botcommands) return
-if (Ownerarea) return
+if (message.channel.id === bypassstuffandstaffstuff.Swearfilterbypassedchannels) return
+
+
+
+
+
 		
 
 		
@@ -261,7 +265,7 @@ if (Ownerarea) return
 			.addField('Message deleted', message.content)
 			.setFooter('Time deleted', client.user.displayAvatarURL())
 			.setTimestamp()
-		client.channels.cache.get(`835519322909573190`).send(yesembed)
+		client.channels.cache.get(bypassstuffandstaffstuff.messagefilterlog).send(yesembed)
 		message.author.send(userembed)
 	}
 })
@@ -272,11 +276,12 @@ if (Ownerarea) return
 	client.on('message', (message) => {
 
 
-		let generalsupport = message.channel.id === `824059680905101333`
-let gamingsupport = message.channel.id === `824059755935957023`
-let softwaresupport = message.channel.id === `824059831513907200`
-let hardwaresupport = message.channel.id === `824059920826499093`
-let vcchat = message.channel.id === `824061207924965416`
+
+
+
+
+
+
 
 
 	
@@ -300,10 +305,10 @@ if (message.content.includes("issue","is anybody able to help me?", "can  i get 
 	if(message.author.bot) return 
 
 
-	let roleID = "850684245927788554";
+	let roleID = bypassstuffandstaffstuff.BypassroleandstaffID;
 			let membersWithRole = message.guild.roles.cache.get(roleID).members;
 		
-			let bypass = message.guild.roles.cache.get("850684245927788554");
+			let bypass = message.guild.roles.cache.get(bypassstuffandstaffstuff.BypassroleandstaffID);
 		
 			if(message.member.roles.cache.has(bypass.id)) return
 
@@ -312,11 +317,12 @@ if (message.content.includes("issue","is anybody able to help me?", "can  i get 
 
 
 
-if(generalsupport) return
-if(gamingsupport) return
-if(softwaresupport) return
-if(hardwaresupport) return
-if(vcchat) return
+if(message.channel.id === bypassstuffandstaffstuff.autoresponsesneedhelp) return
+
+
+
+
+
 
 
 
@@ -357,10 +363,10 @@ if(message.author.bot) return;
 		if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
 	
 	
-			let roleID = "850684245927788554";
+			let roleID = bypassstuffandstaffstuff.BypassroleandstaffID;
 			let membersWithRole = message.guild.roles.cache.get(roleID).members;
 		
-			let bypass = message.guild.roles.cache.get("850684245927788554");
+			let bypass = message.guild.roles.cache.get(bypassstuffandstaffstuff.BypassroleandstaffID);
 		
 			if(message.member.roles.cache.has(bypass.id)) return;
 		
@@ -396,10 +402,10 @@ client.on('message', async message => {
 
 
 
-		let roleID = "850684245927788554";
+		let roleID = bypassstuffandstaffstuff.BypassroleandstaffID;
 	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
-	let bypass = message.guild.roles.cache.get("850684245927788554");
+	let bypass = message.guild.roles.cache.get(bypassstuffandstaffstuff.BypassroleandstaffID);
 
 	if(message.member.roles.cache.has(bypass.id)) return
 
@@ -420,7 +426,7 @@ client.on('message', async message => {
 			.addField('Message deleted', message.content)
 			.setFooter('Time deleted', client.user.displayAvatarURL())
 			.setTimestamp()
-		client.channels.cache.get(`835519322909573190`).send(yesembed)
+		client.channels.cache.get(bypassstuffandstaffstuff.messagefilterlog).send(yesembed)
 		message.author.send(userembed)
 	}
 })
@@ -438,7 +444,7 @@ if(!message.author.id) message.author.id = `couldn't detect the ID of the User`
 
 
 
-		let channelID = `853984661360869386`
+		let channelID = bypassstuffandstaffstuff.DMlog
 		let logdest = new discord.MessageEmbed()
 			.setTitle(`DM`)
 			.setDescription(`by:  ${message.author}`  )
@@ -469,10 +475,10 @@ client.on('messageDelete', async message => {
 	
 	
 	
-	let roleID = "850684245927788554";
+	let roleID = bypassstuffandstaffstuff.BypassroleandstaffID;
 	let membersWithRole = message.guild.roles.cache.get(roleID).members;
 
-	let bypass = message.guild.roles.cache.get("850684245927788554");
+	let bypass = message.guild.roles.cache.get(bypassstuffandstaffstuff.BypassroleandstaffID);
 
 	if(message.member.roles.cache.has(bypass.id)) return
 
@@ -483,7 +489,7 @@ client.on('messageDelete', async message => {
 	if(!message.content) message.content = `not detected`
 
 
-	let channelID = '825774127661973545'
+	let channelID = bypassstuffandstaffstuff.messagedeletelog
 	let logdest = new discord.MessageEmbed()
 		.setTitle(`Message deleted`)
 		.setDescription(` message deleted send by ${message.member} in ${message.channel} **Content:** ${message.content}`)
@@ -512,7 +518,7 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 	const { executor, target } = banLog;
 	
 	if (target.id === user.id) {
-		let channelID = '825788452103913522'
+		let channelID = bypassstuffandstaffstuff.bannedlog
 	let logdest = new discord.MessageEmbed()
 		.setTitle(`Banned`)
 		.setDescription(` User banned: ${user.tag} banned by: ${executor.tag}`)
@@ -523,7 +529,7 @@ client.on('guildBanAdd',  async (guild,user) =>  {
 		
 		
 	} else {
-		let channelID = '825788452103913522'
+		let channelID = bypassstuffandstaffstuff.bannedlog
 	let logdest = new discord.MessageEmbed()
 		.setTitle(`Banned`)
 		.setDescription(` User banned: ${user.tag} couldn't detect who banned them`)
@@ -552,16 +558,16 @@ client.on('messageUpdate', async (oldMessage,newMessage) => {
 	if(!oldMessage.author.tag) oldMessage.author.tag = `couldn't detect`
 
 
-	let roleID = "850684245927788554";
+	let roleID = bypassstuffandstaffstuff.BypassroleandstaffID;
 	let membersWithRole = oldMessage.guild.roles.cache.get(roleID).members;
 
-	let bypass = oldMessage.guild.roles.cache.get("850684245927788554");
+	let bypass = oldMessage.guild.roles.cache.get(bypassstuffandstaffstuff.BypassroleandstaffID);
 
 	if(oldMessage.member.roles.cache.has(bypass.id)) return
 
 
 	
-	const MessageLog = client.channels.cache.find(channel => channel.id ==='825774068313358346');
+	const MessageLog = client.channels.cache.find(channel => channel.id === bypassstuffandstaffstuff.messageeditlog);
 const embed = new discord.MessageEmbed()
 .setTitle(`Message updated`) 
 .setAuthor(oldMessage.author.tag)
@@ -584,7 +590,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 		.setTimestamp()
 		.setColor('BLUE')
 		.addField(`New nickname`, newMember.nickname)
-	  client.channels.cache.get('825773983000690698').send(membernewnicklog);
+	  client.channels.cache.get(bypassstuffandstaffstuff.Nicknamelog).send(membernewnicklog);
 	  return;
 	}
 	if (oldMember.nickname && !newMember.nickname) {
@@ -596,7 +602,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 		.setTimestamp()
 		.setColor('BLUE')
 		.addField(`Old nickname`, oldMember.nickname)
-	  client.channels.cache.get('825773983000690698').send(memberremovenicklog);
+	  client.channels.cache.get(bypassstuffandstaffstuff.Nicknamelog).send(memberremovenicklog);
 	  return;
 	}
 	if (oldMember.nickname && newMember.nickname) {
@@ -609,7 +615,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 		.setColor('BLUE')
 		.addField(`Before`, oldMember.nickname)
 		.addField(`After`, newMember.nickname);
-	  client.channels.cache.get('825773983000690698').send(memberchangednicklog);
+	  client.channels.cache.get(bypassstuffandstaffstuff.Nicknamelog).send(memberchangednicklog);
 	  return;
 	}
   });
@@ -628,7 +634,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 				Embedroles1.setAuthor(newMember.user.tag, newMember.user.avatarURL());
                 Embedroles1.addField(`Role Removed`, role);
            
-				client.channels.cache.get("825785679220703243").send(Embedroles1)
+				client.channels.cache.get(bypassstuffandstaffstuff.roleaddedremoved).send(Embedroles1)
 			
 			}
 
@@ -647,7 +653,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
         Embedroles2.setAuthor(newMember.user.tag, newMember.user.avatarURL());
                 Embedroles2.addField(`Role Added`, role);
            
-				client.channels.cache.get("825785679220703243").send(Embedroles2);
+				client.channels.cache.get(bypassstuffandstaffstuff.roleaddedremoved).send(Embedroles2);
 			
 			}
         });
@@ -681,7 +687,7 @@ client.on('guildBanRemove',  async (guild,user) =>  {
 	const { executor, target } = banLog;
 	
 	if (target.id === user.id) {
-		let channelID = '825788500179812363'
+		let channelID = bypassstuffandstaffstuff.unbannedlog
 	let logdest = new discord.MessageEmbed()
 		.setTitle(`Unbanned`)
 		.setDescription(` User Unbanned: ${user.tag} Unbanned by: ${executor.tag}`)
@@ -692,7 +698,7 @@ client.on('guildBanRemove',  async (guild,user) =>  {
 		
 		
 	} else {
-		let channelID = '825788500179812363'
+		let channelID = bypassstuffandstaffstuff.unbannedlog
 	let logdest = new discord.MessageEmbed()
 		.setTitle(`Unbanned`)
 		.setDescription(` User Unbanned: ${user.tag} couldn't detect who Unbanned them`)
@@ -755,7 +761,7 @@ client.on('guildMemberAdd', (member) => {
 		
 
 
-	let logchanneldestid = '833815923457654844' 
+	let logchanneldestid = bypassstuffandstaffstuff.invites 
 let newinviteembed = new discord.MessageEmbed()
 .setTitle('Invite')
 .setAuthor(member.user.tag)
@@ -778,7 +784,7 @@ client.channels.cache.get(logchanneldestid).send(newinviteembed)
 		.setThumbnail(member.user.displayAvatarURL())
 		.setColor("GREEN")
 		.setTimestamp()
-		member.guild.channels.cache.get('824060103119470622').send(embed)
+		member.guild.channels.cache.get(bypassstuffandstaffstuff.welcome).send(embed)
 	let userembed = new discord.MessageEmbed()
 		.setTitle(`Welcome to TechEmpireGermany!`)
 		.setDescription(`Check out the rules channel and enjoy your stay! 😀`)
@@ -790,7 +796,7 @@ client.channels.cache.get(logchanneldestid).send(newinviteembed)
 		.setDescription(`${member.user.tag} has joined TechEmpireGermany!`)
 		.setColor("GREEN")
 		.setTimestamp()
-		member.guild.channels.cache.get('824319260540010557').send(embed2)
+		member.guild.channels.cache.get(bypassstuffandstaffstuff.welcome).send(embed2)
 		// Autoroles 
 		var role = member.guild.roles.cache.find(role => role.name == "M150")
 		member.roles.add(role);
@@ -808,7 +814,7 @@ client.on('guildMemberRemove', (member) => {
 		.setThumbnail(member.user.displayAvatarURL())
 		.setColor("RED")
 		.setTimestamp()
-		client.channels.cache.get('824321468279947275').send(embed)
+		client.channels.cache.get(bypassstuffandstaffstuff.left).send(embed)
 })
 
 const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
