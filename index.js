@@ -11,7 +11,7 @@ const {everyone} = require(`./Everyone.json`)
 
 const {dcinvites} = require(`./dcinvites.json`)
 
-
+const bypassstuffandstaffstuff = require("./prop.json")
 
 // Mongo db definiton
 const mongoose = require('mongoose')
