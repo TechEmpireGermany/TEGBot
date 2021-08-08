@@ -13,26 +13,26 @@ const {dcinvites} = require(`./dcinvites.json`)
 
 
 const BypassroleandstaffID = '850684245927788554'
-const spteamstaffchannel = message.channel.id === `824065058388181013`
-const modtalk = message.channel.id === `824057837491453982`
-const botdevelopment = message.channel.id === `824216769442218004`
-const botcommands = message.channel.id === `824326748426469396`
-const Ownerarea = message.channel.id ===`824066908097740910`
-const ticketcreate = message.channel.id === '824684376398233670'
-	const suggestions = message.channel.id === '824926277868978186'
-	const general = message.channel.id === '824042976371277888'
-	const games = message.channel.id === '824059985998381138'
-	const setups = message.channel.id === '824737989850169355'
-	const memes = message.channel.id === '824738477291601980'
-	const music = message.channel.id === '824067063941300224'
-	const funbots = message.channel.id === '832535838289297408'
-	const supportteam = message.channel.id === '824065058388181013'
-	const bump = message.channel.id === '824185956549787659'
-	let generalsupport = message.channel.id === `824059680905101333`
-let gamingsupport = message.channel.id === `824059755935957023`
-let softwaresupport = message.channel.id === `824059831513907200`
-let hardwaresupport = message.channel.id === `824059920826499093`
-let vcchat = message.channel.id === `824061207924965416`
+const spteamstaffchannel =  `824065058388181013`
+const modtalk = `824057837491453982`
+const botdevelopment = `824216769442218004`
+const botcommands = `824326748426469396`
+const Ownerarea = `824066908097740910`
+const ticketcreate =  '824684376398233670'
+	const suggestions =  '824926277868978186'
+	const general =  '824042976371277888'
+	const games = '824059985998381138'
+	const setups = '824737989850169355'
+	const memes =  '824738477291601980'
+	const music =  '824067063941300224'
+	const funbots =  '832535838289297408'
+	const supportteam = '824065058388181013'
+	const bump =  '824185956549787659'
+	let generalsupport =  `824059680905101333`
+let gamingsupport =  `824059755935957023`
+let softwaresupport =  `824059831513907200`
+let hardwaresupport =  `824059920826499093`
+let vcchat =  `824061207924965416`
 const  OwnerRoleID =  '824063311829925898'
 const stafflogs =   '824194262279127060'
 const messagefilterlog = '835519322909573190'
@@ -43,7 +43,7 @@ const bannedlog = '825788452103913522'
 const Nicknamelog = '825773983000690698'
 const roleaddedremoved = '825785679220703243'
 const unbannedlog = '825788500179812363'
-const invites = '833815923457654844' 
+const inviteslog = '833815923457654844' 
 const welcome = '824060103119470622'
 const joined = '824319260540010557'
 const left = '824321468279947275'
@@ -120,16 +120,16 @@ client.on("message", async (message) => {
 
 	if(message.member.roles.cache.has(staff.id))  {
 
-		if(ticketcreate) return
-		if(suggestions) return
-		if(general) return
-		if(games) return
-		if(setups) return
-		if(memes) return
-		if(music) return
-		if(funbots) return
-		if(supportteam) return
-		if(bump) return
+		if(message.channel.id === ticketcreate) return
+		if(message.channel.id ===suggestions) return
+		if(message.channel.id ===general) return
+		if(message.channel.id ===games) return
+		if(message.channel.id ===setups) return
+		if(message.channel.id ===memes) return
+		if(message.channel.id ===music) return
+		if(message.channel.id ===funbots) return
+		if(message.channel.id ===supportteam) return
+		if(message.channel.id ===bump) return
 
 
 
@@ -219,11 +219,11 @@ client.on('message', async message => {
 		.setColor('BLUE')
 		if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
 		
-		if (spteamstaffchannel) return
-		if (modtalk) return
-		if (botdevelopment) return
-		if (botcommands) return
-		if (Ownerarea) return
+		if (message.channel.id === spteamstaffchannel) return
+		if (message.channel.id ===modtalk) return
+		if (message.channel.id ===botdevelopment) return
+		if (message.channel.id ===botcommands) return
+		if (message.channel.id ===Ownerarea) return
 
 
 
@@ -290,11 +290,11 @@ if (message.channel.type === 'dm') return message.channel.send(dmreplyembed)
 
 		let owners = message.guild.roles.cache.get(OwnerRoleID)
 if (message.member.roles.cache.has(owners.id)) return
-if (spteamstaffchannel) return
-if (modtalk) return
-if (botdevelopment) return
-if (botcommands) return
-if (Ownerarea) return
+if (message.channel.id ===spteamstaffchannel) return
+if (message.channel.id ===modtalk) return
+if (message.channel.id ===botdevelopment) return
+if (message.channel.id ===botcommands) return
+if (message.channel.id ===Ownerarea) return
 
 
 
@@ -373,11 +373,11 @@ if (message.content.includes("issue","is anybody able to help me?", "can  i get 
 
 
 
-			if(generalsupport) return
-			if(gamingsupport) return
-			if(softwaresupport) return
-			if(hardwaresupport) return
-			if(vcchat) return
+			if(message.channel.id ===generalsupport) return
+			if(message.channel.id ===gamingsupport) return
+			if(message.channel.id ===softwaresupport) return
+			if(message.channel.id ===hardwaresupport) return
+			if(message.channel.id ===vcchat) return
 
 
 
@@ -821,7 +821,7 @@ client.on('guildMemberAdd', (member) => {
 		
 
 
-	let logchanneldestid = invites 
+	let logchanneldestid = inviteslog 
 let newinviteembed = new discord.MessageEmbed()
 .setTitle('Invite')
 .setAuthor(member.user.tag)
