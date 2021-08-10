@@ -17,7 +17,7 @@ module.exports = {
 const embedmessage =  new discord.MessageEmbed()
 .setTitle('DM')
 .setDescription(dmmessage)
-.setFooter('Official Message from TEG writen by the owners')
+.setFooter('Official Message from TEG writen by the owner')
 .setColor('BLUE')
 
 
