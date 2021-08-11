@@ -49,7 +49,7 @@ module.exports = {
                 color: 'PURPLE',
                 author: { name: "Github" },
                 fields: [
-                    {name: 'Link:' , value: "https://github.com/TechEmpireGermany"}
+                    {name: 'Link:' , value: "https://github.com/TechSupportCentral"}
 
                 ]
 
