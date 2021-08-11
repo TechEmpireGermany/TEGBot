@@ -24,8 +24,7 @@ const logmessage = new discord.MessageEmbed()
 .setDescription(dmmessage)
 .setFooter('Official Message from TEG writen by the owner')
 .setColor('GREEN')
-.addfield('Destination:' , user)
-client.channels.cache.get('853984661360869386').send(dmmessage)
+client.channels.cache.get('853984661360869386').send(logmessage)
 
 
 
