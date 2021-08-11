@@ -1,15 +1,3 @@
-const fs = require('fs');
-const discord = require('discord.js');
-
-const client = new discord.Client({ disableMentions: 'everyone' });
-
-const { Player } = require('discord-player');
-
-const { swears }  = require('./swears.json');
-
-const {everyone} = require(`./Everyone.json`)
-
-const {dcinvites} = require(`./dcinvites.json`)
 
 
 const BypassroleandstaffID = '850684245927788554'
@@ -49,6 +37,18 @@ const joined = '824319260540010557'
 const left = '824321468279947275'
 
 
+const fs = require('fs');
+const discord = require('discord.js');
+
+const client = new discord.Client({ disableMentions: 'everyone' });
+
+const { Player } = require('discord-player');
+
+const { swears }  = require('./swears.json');
+
+const {everyone} = require(`./Everyone.json`)
+
+const {dcinvites} = require(`./dcinvites.json`)
 
 
 

@@ -1,45 +1,47 @@
-Main dependencies(1-24) 
+Easy Config (3-37)
 
-MongoDB connection( 28-32)
+Main dependencies(40-63) 
 
-loading commands(35-43)
+MongoDB connection( 67-71)
 
-activity Points System(45-139)
+loading commands(74-82)
 
-swearFilter(145-203)
+activity Points System(84-188)
 
-@Everyone Filter (206-267)
+swearFilter(194-257)
 
-auto response(268-378)
+@Everyone Filter (260-327)
 
-discord.gg Filter(380-428)
+auto response(328-442)
 
-DM Log(430-453)
+discord.gg Filter(444-492)
 
-message delete log (461-497)
+DM Log(494-517)
 
-Ban add log (499-536)
+message delete log (525-561)
 
-message edit log (542-575)
+Ban add log (563-600)
 
-Nickname's log (578-617)
+message edit log (606-639)
 
-role added/removed log (619-658)
+Nickname's log (642-681)
 
-unbanned log (668-705)
+role added/removed log (683-722)
 
-Bump Reminder (707-716)
+unbanned log (732-769)
 
-set bump(718-726)
+Bump Reminder (771-780)
 
-Invite logs (729-739+746-770)
+set bump(782-790)
 
-welcome and joined message(775-795)
+Invite logs (793-803+810-834)
 
-autoroles(796-801)
+welcome and joined message(839-859)
 
-left log (803-814)
+autoroles(860-863)
 
-event loading and client login (816-833)
+left log (867-887)
+
+event loading and client login (880-897)
 
  
