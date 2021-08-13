@@ -16,8 +16,8 @@ module.exports = {
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permissions to use this command.')
 
         const embedmessage = new discord.MessageEmbed()
-        .setTitle('your Staff application on TEG got declined')
-        .setDescription('your staff application on TEG got declined please open a ticket for more information')
+        .setTitle('your Staff application on TSC got declined')
+        .setDescription('your staff application on TSC got declined please open a ticket for more information')
         .setFooter(custompart)
         .setColor('BLUE')
 

@@ -23,7 +23,7 @@ module.exports = {
 const embedmessage = new discord.MessageEmbed()
 .setTitle('Your staff Application got accepeted!')
 .setColor('BLUE')
-.setDescription(` your staff application on TEG got accepted please open a ticket for more information`)
+.setDescription(` your staff application on TSC got accepted please open a ticket for more information`)
 .setFooter(custompart)
 
 

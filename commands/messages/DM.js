@@ -22,7 +22,7 @@ const embedmessage =  new discord.MessageEmbed()
 const logmessage = new discord.MessageEmbed()
 .setTitle('DM send to the user by TSC-BOT')
 .setDescription(dmmessage)
-.setFooter('Official Message from TEG writen by the owner')
+.setFooter('Official Message from TSC writen by the owner')
 .setColor('GREEN')
 client.channels.cache.get('853984661360869386').send(logmessage)
 
