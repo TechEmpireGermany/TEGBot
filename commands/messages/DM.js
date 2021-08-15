@@ -17,7 +17,7 @@ module.exports = {
 const embedmessage =  new discord.MessageEmbed()
 .setTitle('DM')
 .setDescription(dmmessage)
-.setFooter('Official Message from TEG writen by the owner')
+.setFooter('Official Message from TEG writen by the owners')
 .setColor('BLUE')
 const logmessage = new discord.MessageEmbed()
 .setTitle('DM send to the user by TSC-BOT')
