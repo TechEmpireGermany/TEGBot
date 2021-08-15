@@ -30,6 +30,6 @@ module.exports = {
 	.setFooter('Time custom command added', client.user.displayAvatarURL())
 	.setTimestamp()
         message.react("✅")
-        client.channels.cache.get(`825766714926170122`).send(customembed)
+        client.channels.cache.get(`824194262279127060`).send(customembed)
     }
 }
