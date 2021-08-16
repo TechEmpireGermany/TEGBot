@@ -858,7 +858,7 @@ client.channels.cache.get(logchanneldestid).send(newinviteembed)
 		.setTimestamp()
 		member.guild.channels.cache.get(joined).send(embed2)
 		// Autoroles 
-		var role = member.guild.roles.cache.find(role => role.name == "M150")
+		var role = member.guild.roles.cache.find(role => role.name == "M200")
 		member.roles.add(role);
 })
 
