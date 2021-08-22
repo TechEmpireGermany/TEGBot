@@ -44,6 +44,13 @@ const client = new discord.Client({ disableMentions: 'everyone' });
 
 const { Player } = require('discord-player');
 
+const { swears }  = require('./swears.json');
+
+const {everyone} = require(`./Everyone.json`)
+
+const {dcinvites} = require(`./dcinvites.json`)
+
+
 
 
 
@@ -187,7 +194,7 @@ client.on('message', async message => {
 
 
 
-const swears = require("./swears.json") 
+
 
 	
 
@@ -252,7 +259,6 @@ const swears = require("./swears.json")
 client.on('message', async message => {
 	
 	
-const everyone = require("./Everyone.json")
 
 
 
@@ -320,7 +326,7 @@ if (message.channel.id ===Ownerarea) return
 //Discord.gg filter
 client.on('message', async message => {
 
-	const dcinvites = require("./dcinvites.json")
+	
 
 	let yes = false;
    
