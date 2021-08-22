@@ -8,10 +8,6 @@ module.exports = {
         if (!args[0]) {
             const infos = message.client.commands.filter(x => x.category == 'Infos').map((x) => '`' + x.name + '`').join(', ');
             const music = message.client.commands.filter(x => x.category == 'Music').map((x) => '`' + x.name + '`').join(', ');
-            const staff_re = message.client.commands.filter(x => x.category == 'staff-re').map((x) => '`' + x.name + '`').join(', ');
-            const messages = message.client.commands.filter(x => x.category == 'messages').map((x) => '`' + x.name + '`').join(', ');
-            const TODO = message.client.commands.filter(x => x.category == 'td').map((x) => '`' + x.name + '`').join(', ');
-            const spteam_commands = message.client.commands.filter(x => x.category == 'spteam-commands').map((x) => '`' + x.name + '`').join(', ');
 
             message.channel.send({
                 embed: {
@@ -21,10 +17,9 @@ module.exports = {
                     fields: [
                         { name: 'Infos', value: infos },
                         { name: 'Music', value: music },
-                        {name: 'Staff-re', value:staff_re },
-                        {name: 'Support Team Commands', value:spteam_commands },
-                        {name: 'messages', value:messages },
-                        {name: 'To-Do', value:TODO },
+                      
+                       
+                       
                         { name: 'Music Filters', value: client.filters.map((x) => '`' + x + '`').join(', ') },
                     ],
                     timestamp: new Date(),
