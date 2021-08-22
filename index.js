@@ -187,7 +187,7 @@ client.on('message', async message => {
 
 
 
-
+const swears = require("./swears.json") 
 
 	
 
@@ -252,7 +252,7 @@ client.on('message', async message => {
 client.on('message', async message => {
 	
 	
-
+const everyone = require("./Everyone.json")
 
 
 
@@ -319,6 +319,9 @@ if (message.channel.id ===Ownerarea) return
 
 //Discord.gg filter
 client.on('message', async message => {
+
+	const dcinvites = require("./dcinvites.json")
+
 	let yes = false;
    
     var filter3;
